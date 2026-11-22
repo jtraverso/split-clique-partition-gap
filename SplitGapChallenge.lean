@@ -59,7 +59,8 @@ noncomputable def gap (G : SimpleGraph V) : ℝ :=
   (G.cliquePartitionNumber : ℝ) - G.fracCliquePartitionNumber
 
 
-variable {U : Type*} [Fintype U] [DecidableEq U]
+universe u_3
+variable {U : Type u_3} [Fintype U] [DecidableEq U]
 
 /-- Infimum of the total weights of fractional partitions with pieces of order at most four. -/
 noncomputable def fracPartitionFour (G : SimpleGraph U) : ℝ :=

@@ -2,6 +2,8 @@
 
 Juan Pablo Traverso Gianini · Preprint 1.0 · DOI 10.5281/zenodo.24408988
 
+[Read the preprint on alphaXiv](https://www.alphaxiv.org/abs/2611.edge-clique-partition-split-graphs)
+
 | Edition | Markdown | LaTeX | PDF |
 |---|---|---|---|
 | English manuscript | [MD](preprints/SPLITGAP/01_manuscript/split-gap-en.md) | [TEX](preprints/SPLITGAP/01_manuscript/split-gap-en.tex) | [PDF](preprints/SPLITGAP/01_manuscript/split-gap-en.pdf) |

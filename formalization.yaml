@@ -1,0 +1,48 @@
+version: v0.4
+project:
+  name: "Nearly Quadratic Additive Gaps for Edge-Clique Partitions of Split Graphs"
+  description: >-
+    For all sufficiently large n there is an n-vertex split graph that stays
+    connected after removing any set of fewer than ceiling(n/5) vertices.
+    Its exact edge-clique partition number exceeds the fractional optimum by
+    at least a positive constant times n^2 (log n)^(-5/2) times
+    exp(-2 sqrt(log(24/7) log n)). The same lower bound holds with the fractional
+    optimum restricted to cliques of order at most four. The construction
+    combines a local triangle-packing obstruction, a signed weight estimate
+    on affine blocks, and host assignments in a split graph.
+  authors: ["Juan Pablo Traverso Gianini"]
+  responsible_maintainers: ["Juan Pablo Traverso Gianini"]
+  license: Apache-2.0
+classification:
+  arxiv: [math.CO]
+  msc2020: ["05C70", "05C40", "05C35"]
+sources:
+  - title: "Nearly Quadratic Additive Gaps for Edge-Clique Partitions of Split Graphs"
+    type: paper
+    authors: ["Juan Pablo Traverso Gianini"]
+    id: "https://www.alphaxiv.org/abs/2611.edge-clique-partition-split-graphs"
+    location: "https://github.com/jtraverso/split-clique-partition-gap/tree/45a332df5197146f0fb576fb5fdef77e4303a785/preprints/SPLITGAP"
+    relationship: formalizes
+    note: "Theorems 1.1 and 1.4 on the same graph, plus the restricted fractional bound used in Corollary 7.2."
+status:
+  scope: >-
+    Two declarations give the constructive lower bounds with linear vertex
+    connectivity. The manuscript's chordal upper bound and its identity
+    translating restricted partition costs into mixed packing gains are
+    mathematical context outside these two declarations.
+  sorry_count: 2
+  sorry_in_definitions: 0
+  axioms: [propext, Classical.choice, Quot.sound]
+automation:
+  methods:
+    - method: manual
+    - method: agent
+      models: ["Claude", "ChatGPT/Codex"]
+      tool_setup: "Human-directed mathematical development, verification, formalization and packaging."
+  notes: "Certo-Math checked the finite obstruction. The two intentional placeholders are in the Challenge theorem proofs."
+fidelity:
+  divergences: "The standalone Challenge reproduces the published definitions and the two precise endpoint types. The Solution uses the original proof modules."
+review:
+  status: agent-reviewed
+  reviewers: ["Codex"]
+  notes: "The preprint audit rebuilt the Lean project and checked axioms across 1,347 theorem declarations."

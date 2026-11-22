@@ -1,0 +1,13 @@
+{
+  "challenge_module": "SplitGapChallenge",
+  "solution_module": "SplitGapSolution",
+  "theorem_names": [
+    "GapExtremal.R434.nearly_quadratic_gap_with_linear_connectivity",
+    "GapExtremal.R434.nearly_quadratic_gap_with_fractional_pieces_at_most_four"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

@@ -1,8 +1,10 @@
 # Nearly Quadratic Additive Gaps for Edge-Clique Partitions of Split Graphs
 
-Juan Pablo Traverso Gianini · Preprint 1.0 · DOI 10.5281/zenodo.24408988
+Juan Pablo Traverso Gianini · Preprint 1.0
 
 [Read the preprint on alphaXiv](https://www.alphaxiv.org/abs/2611.edge-clique-partition-split-graphs)
+
+[Reserved Zenodo record](https://zenodo.org/records/24408988) · [Reserved DOI 10.5281/zenodo.24408988](https://doi.org/10.5281/zenodo.24408988)
 
 | Edition | Markdown | LaTeX | PDF |
 |---|---|---|---|

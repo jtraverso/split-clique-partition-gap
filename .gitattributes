@@ -1,0 +1,16 @@
+*.lean -text
+*.md text eol=lf
+*.json text eol=lf
+*.toml text eol=lf
+*.tex text eol=lf
+*.pdf binary
+*.png binary
+
+*.zip binary
+*.sha256 text eol=lf
+preprints/SPLITGAP/**/*.log text eol=lf
+preprints/SPLITGAP/**/*.py text eol=lf
+preprints/SPLITGAP/**/*.txt text eol=lf
+preprints/SPLITGAP/04_integrity/SHA256SUMS text eol=lf
+
+*.tsv text eol=lf

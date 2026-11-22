@@ -1,0 +1,14 @@
+{
+  "title": "Nearly Quadratic Additive Gaps for Edge-Clique Partitions of Split Graphs",
+  "version": "1.0",
+  "edition_date": "2026-11-21",
+  "language": [
+    "en",
+    "es"
+  ],
+  "repository": "https://github.com/jtraverso/split-clique-partition-gap",
+  "edition": "preprints/SPLITGAP",
+  "doi": "10.5281/zenodo.24408988",
+  "doi_status": "reserved_not_published",
+  "distribution": "preprint"
+}

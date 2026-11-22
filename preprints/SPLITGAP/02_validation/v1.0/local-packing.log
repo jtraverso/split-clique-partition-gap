@@ -1,0 +1,2 @@
+python -B audit/check_local_packing.py
+PASS: 54 edges, 45 triangles, 16 displayed triangles on 48 distinct edges; no packing of 17.

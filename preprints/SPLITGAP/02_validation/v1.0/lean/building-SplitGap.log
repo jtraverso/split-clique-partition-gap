@@ -1,0 +1,1041 @@
+✔ [1159/1167] Built R434.EHPSRegion (12s)
+✔ [1249/1258] Built R434.OddMidpoints (10s)
+⚠ [1267/1277] Built R434.EHPSPotential (14s)
+warning: R434/EHPSPotential.lean:121:26: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1647/1656] Built R434.EHPSGrid (14s)
+warning: R434/EHPSGrid.lean:99:25: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: R434/EHPSGrid.lean:99:25: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+✔ [1871/1883] Built R434.EHPSClasses (9.9s)
+✔ [2074/2085] Built R434.EHPSProduct (8.6s)
+✔ [8964/8973] Built GapExtremal.Cap (10s)
+✔ [8965/8973] Built GapExtremal.LocalH12 (19s)
+✔ [8966/8983] Built GapExtremal.Geometry (10s)
+⚠ [8967/8985] Built GapExtremal.Residual (23s)
+warning: GapExtremal/Residual.lean:198:37: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+✔ [8968/8996] Built GraphBase.Clique.Partition (11s)
+✔ [8969/8998] Built GraphBase.Clique.CliqueSets (9.4s)
+⚠ [8970/9003] Built GapExtremal.GlobalLemmas (27s)
+warning: GapExtremal/GlobalLemmas.lean:53:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: GapExtremal/GlobalLemmas.lean:53:33: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8971/9003] Built GapExtremal.Defs (11s)
+warning: GapExtremal/Defs.lean:39:23: Variable name `u` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _u
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: GapExtremal/Defs.lean:39:28: Variable name `v` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _v
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: GapExtremal/Defs.lean:41:0: automatically included section variable(s) unused in theorem `GapExtremal.mem_cliqueSets_iff_isClq`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [8972/9003] Built R434.LocalH54 (18s)
+⚠ [8973/9003] Built GapExtremal.Global (24s)
+warning: GapExtremal/Global.lean:47:0: automatically included section variable(s) unused in theorem `GapExtremal.D_singleton_le_one`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Global.lean:92:57: This simp argument is unused:
+  hAdef
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: GapExtremal/Global.lean:209:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [8974/9003] Built R434.ResidualArithmetic (9.9s)
+warning: R434/ResidualArithmetic.lean:3:0: 'Mathlib.Data.Real.Basic' has been deprecated: please replace this import by
+
+import Mathlib.Basic.Real.Basic
+⚠ [8975/9006] Built GapExtremal.Completion (19s)
+warning: GapExtremal/Completion.lean:36:0: automatically included section variable(s) unused in theorem `GapExtremal.isClq_pair`:
+  [Fintype V]
+  [DecidableRel G.Adj]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableRel G.Adj] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Completion.lean:46:0: automatically included section variable(s) unused in theorem `GapExtremal.mem_cliques`:
+  [DecidableRel G.Adj]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableRel G.Adj] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Completion.lean:50:0: automatically included section variable(s) unused in theorem `GapExtremal.isClq_of_sub`:
+  [Fintype V]
+  [DecidableEq V]
+  [DecidableRel G.Adj]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] [DecidableRel G.Adj] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Completion.lean:53:0: automatically included section variable(s) unused in theorem `GapExtremal.pair_of_card_two`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Completion.lean:134:56: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/Completion.lean:155:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/Completion.lean:159:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/Completion.lean:183:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/Completion.lean:210:0: automatically included section variable(s) unused in theorem `GapExtremal.completion_card_le`:
+  [Fintype V]
+  [DecidableRel G.Adj]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableRel G.Adj] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8976/9006] Built GapExtremal.LocalEmbed (21s)
+warning: GapExtremal/LocalEmbed.lean:105:6: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp [*]
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8977/9006] Built GapExtremal.Global2 (26s)
+warning: GapExtremal/Global2.lean:40:0: automatically included section variable(s) unused in theorem `GapExtremal.D_singleton_le_two`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Global2.lean:75:2: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: GapExtremal/Global2.lean:267:20: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [8978/9006] Built GapExtremal.Bridge (27s)
+warning: GapExtremal/Bridge.lean:46:0: automatically included section variable(s) unused in theorem `GapExtremal.card_adj_add_j`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Bridge.lean:132:8: automatically included section variable(s) unused in theorem `GapExtremal.hostGraph_inl_inl`:
+  [Fintype V]
+  [DecidableEq V]
+  [Fintype H]
+  [DecidableEq H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] [Fintype H] [DecidableEq H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Bridge.lean:133:8: automatically included section variable(s) unused in theorem `GapExtremal.hostGraph_inl_inr`:
+  [Fintype V]
+  [DecidableEq V]
+  [Fintype H]
+  [DecidableEq H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] [Fintype H] [DecidableEq H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Bridge.lean:135:8: automatically included section variable(s) unused in theorem `GapExtremal.hostGraph_inr_inl`:
+  [Fintype V]
+  [DecidableEq V]
+  [Fintype H]
+  [DecidableEq H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] [Fintype H] [DecidableEq H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Bridge.lean:137:8: automatically included section variable(s) unused in theorem `GapExtremal.hostGraph_inr_inr`:
+  [Fintype V]
+  [DecidableEq V]
+  [Fintype H]
+  [DecidableEq H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] [Fintype H] [DecidableEq H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Bridge.lean:266:0: automatically included section variable(s) unused in theorem `GapExtremal.two_of_mem_jPairs`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Bridge.lean:269:0: automatically included section variable(s) unused in theorem `GapExtremal.nonadj_of_mem_jPairs`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Bridge.lean:300:0: automatically included section variable(s) unused in theorem `GapExtremal.host_of_ends`:
+  [Fintype H]
+  [DecidableEq H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype H] [DecidableEq H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Bridge.lean:322:41: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/Bridge.lean:340:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/Bridge.lean:344:13: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/Bridge.lean:356:38: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/Bridge.lean:359:0: automatically included section variable(s) unused in theorem `GapExtremal.load_core`:
+  [Fintype H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [8979/9006] Built R417.OptimalCoefficient (15s)
+⚠ [8980/9006] Built R417.LogErrorAbsorption (10s)
+warning: R417/LogErrorAbsorption.lean:50:55: Variable name `hB` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hB
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8981/9006] Built GapExtremal.Core (24s)
+warning: GapExtremal/Core.lean:34:0: automatically included section variable(s) unused in theorem `GapExtremal.mem_line`:
+  [Fintype W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Core.lean:82:0: automatically included section variable(s) unused in theorem `GapExtremal.Bgr_fst_ne`:
+  [Fintype F]
+  [DecidableEq F]
+  [Fintype W]
+  [DecidableEq W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] [DecidableEq F] [Fintype W] [DecidableEq W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Core.lean:110:0: automatically included section variable(s) unused in theorem `GapExtremal.snd_eq_of_sub`:
+  [Fintype F]
+  [DecidableEq F]
+  [Fintype W]
+  [DecidableEq W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] [DecidableEq F] [Fintype W] [DecidableEq W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [8982/9016] Built R434.UniformOrder (18s)
+⚠ [8983/9017] Built GapExtremal.Source (24s)
+warning: GapExtremal/Source.lean:32:0: automatically included section variable(s) unused in theorem `GapExtremal.line_zero`:
+  [Fintype W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Source.lean:98:0: automatically included section variable(s) unused in theorem `GapExtremal.ptc_injective`:
+  [Fintype F]
+  [DecidableEq F]
+  [Fintype W]
+  [DecidableEq W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] [DecidableEq F] [Fintype W] [DecidableEq W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Source.lean:98:72: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: GapExtremal/Source.lean:98:74: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: GapExtremal/Source.lean:112:0: automatically included section variable(s) unused in theorem `GapExtremal.wc_eq_of_two`:
+  [Fintype F]
+  [DecidableEq F]
+  [DecidableEq W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] [DecidableEq F] [DecidableEq W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Source.lean:157:0: automatically included section variable(s) unused in theorem `GapExtremal.mem_piece_iff`:
+  [Fintype F]
+  [Fintype W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] [Fintype W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Source.lean:178:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/Source.lean:182:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/Source.lean:221:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/Source.lean:224:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [8984/9017] Built R434.PartitionEnergy (9.2s)
+warning: R434/PartitionEnergy.lean:18:0: automatically included section variable(s) unused in theorem `GapExtremal.R434.edge_partition_gap_of_count`:
+  [DecidableEq T]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq T] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8985/9017] Built GapExtremal.PCore (23s)
+warning: GapExtremal/PCore.lean:154:0: automatically included section variable(s) unused in theorem `GapExtremal.mem_pblock`:
+  [Fintype W]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype W] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/PCore.lean:170:0: automatically included section variable(s) unused in theorem `GapExtremal.PB_adj_pos`:
+  [Fintype F]
+  [DecidableEq F]
+  [Fintype W]
+  [DecidableEq W]
+  [Fintype V]
+  [DecidableEq V]
+  [DecidableEq P]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype
+  F] [DecidableEq F] [Fintype W] [DecidableEq W] [Fintype V] [DecidableEq V] [DecidableEq P] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8986/9021] Built GapExtremal.Hosts (25s)
+warning: GapExtremal/Hosts.lean:45:59: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/Hosts.lean:73:0: automatically included section variable(s) unused in theorem `GapExtremal.exists_sepFun`:
+  [Fintype F]
+  [DecidableEq W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] [DecidableEq W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Hosts.lean:105:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/Hosts.lean:116:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/Hosts.lean:113:0: automatically included section variable(s) unused in theorem `GapExtremal.lab_spec`:
+  [Fintype F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Hosts.lean:144:0: automatically included section variable(s) unused in theorem `GapExtremal.sel_symm`:
+  [Fintype F]
+  [DecidableEq F]
+  [Fintype W]
+  [DecidableEq W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] [DecidableEq F] [Fintype W] [DecidableEq W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Hosts.lean:148:0: automatically included section variable(s) unused in theorem `GapExtremal.sel_fst_ne`:
+  [Fintype F]
+  [DecidableEq F]
+  [Fintype W]
+  [DecidableEq W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] [DecidableEq F] [Fintype W] [DecidableEq W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Hosts.lean:206:25: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/Hosts.lean:215:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/Hosts.lean:218:25: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/Hosts.lean:218:47: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/Hosts.lean:227:25: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/Hosts.lean:227:38: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/Hosts.lean:230:25: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/Hosts.lean:230:38: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/Hosts.lean:237:25: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/Hosts.lean:237:36: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/Hosts.lean:253:20: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/Hosts.lean:253:31: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/Hosts.lean:254:20: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/Hosts.lean:254:31: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/Hosts.lean:255:25: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/Hosts.lean:255:36: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [8987/9021] Built R434.EHPSCompactExterior (11s)
+⚠ [8988/9022] Built GapExtremal.PSource (25s)
+warning: GapExtremal/PSource.lean:38:0: automatically included section variable(s) unused in theorem `GapExtremal.pvx_base`:
+  [Fintype F]
+  [DecidableEq F]
+  [Fintype W]
+  [DecidableEq W]
+  [Fintype V]
+  [DecidableEq V]
+  [DecidableEq P]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype
+  F] [DecidableEq F] [Fintype W] [DecidableEq W] [Fintype V] [DecidableEq V] [DecidableEq P] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/PSource.lean:41:0: automatically included section variable(s) unused in theorem `GapExtremal.pvx_pos`:
+  [Fintype F]
+  [DecidableEq F]
+  [Fintype W]
+  [DecidableEq W]
+  [Fintype V]
+  [DecidableEq V]
+  [DecidableEq P]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype
+  F] [DecidableEq F] [Fintype W] [DecidableEq W] [Fintype V] [DecidableEq V] [DecidableEq P] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/PSource.lean:53:0: automatically included section variable(s) unused in theorem `GapExtremal.mem_ppiece`:
+  [Fintype F]
+  [DecidableEq F]
+  [Fintype W]
+  [DecidableEq W]
+  [Fintype V]
+  [DecidableEq P]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] [DecidableEq F] [Fintype W] [DecidableEq W] [Fintype V] [DecidableEq P] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/PSource.lean:57:0: automatically included section variable(s) unused in theorem `GapExtremal.col_ne_of_src`:
+  [Fintype F]
+  [DecidableEq F]
+  [Fintype W]
+  [DecidableEq W]
+  [Fintype V]
+  [DecidableEq V]
+  [DecidableEq P]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype
+  F] [DecidableEq F] [Fintype W] [DecidableEq W] [Fintype V] [DecidableEq V] [DecidableEq P] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/PSource.lean:111:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/PSource.lean:115:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/PSource.lean:176:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/PSource.lean:179:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [8989/9022] Built GapExtremal.Main (23s)
+warning: GapExtremal/Main.lean:56:0: automatically included section variable(s) unused in theorem `GapExtremal.card_vertices_le`:
+  [DecidableEq F]
+  [AddCommGroup W]
+  [Module F W]
+  [DecidableEq W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq F] [AddCommGroup W] [Module F W] [DecidableEq W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [8990/9022] Built R434.PolylogOrder (13s)
+⚠ [8991/9022] Built GapExtremal.PHosts (27s)
+warning: GapExtremal/PHosts.lean:74:0: automatically included section variable(s) unused in theorem `GapExtremal.psel_symm`:
+  [Fintype F]
+  [DecidableEq F]
+  [Fintype W]
+  [DecidableEq W]
+  [Fintype V]
+  [DecidableEq V]
+  [Fintype P]
+  [DecidableEq P]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype
+  F] [DecidableEq F] [Fintype W] [DecidableEq W] [Fintype V] [DecidableEq V] [Fintype P] [DecidableEq P] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/PHosts.lean:78:0: automatically included section variable(s) unused in theorem `GapExtremal.psel_of_base_eq`:
+  [Fintype F]
+  [DecidableEq F]
+  [Fintype W]
+  [DecidableEq W]
+  [Fintype V]
+  [DecidableEq V]
+  [Fintype P]
+  [DecidableEq P]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype
+  F] [DecidableEq F] [Fintype W] [DecidableEq W] [Fintype V] [DecidableEq V] [Fintype P] [DecidableEq P] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/PHosts.lean:82:0: automatically included section variable(s) unused in theorem `GapExtremal.ext_of_not_psel`:
+  [Fintype V]
+  [DecidableEq V]
+  [Fintype P]
+  [DecidableEq P]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] [Fintype P] [DecidableEq P] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/PHosts.lean:94:0: automatically included section variable(s) unused in theorem `GapExtremal.sep_eq_of_ext`:
+  [Fintype V]
+  [DecidableEq V]
+  [Fintype P]
+  [DecidableEq P]
+  [Fintype U]
+  [DecidableEq U]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] [Fintype P] [DecidableEq P] [Fintype U] [DecidableEq U] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/PHosts.lean:102:0: automatically included section variable(s) unused in theorem `GapExtremal.smul_ne_zero_of`:
+  [Fintype F]
+  [DecidableEq F]
+  [DecidableEq U]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] [DecidableEq F] [DecidableEq U] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/PHosts.lean:139:26: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/PHosts.lean:149:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/PHosts.lean:153:26: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/PHosts.lean:153:49: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/PHosts.lean:162:26: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/PHosts.lean:162:39: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/PHosts.lean:165:26: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/PHosts.lean:165:39: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/PHosts.lean:174:26: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/PHosts.lean:174:37: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/PHosts.lean:211:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/PHosts.lean:211:32: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/PHosts.lean:212:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/PHosts.lean:212:32: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/PHosts.lean:213:26: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/PHosts.lean:213:37: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [8993/9028] Built GapExtremal.Exponent (26s)
+warning: GapExtremal/Exponent.lean:31:0: automatically included section variable(s) unused in theorem `GapExtremal.coe_capPow`:
+  [AddCommGroup U]
+  [Fintype U]
+  [DecidableEq U]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [AddCommGroup U] [Fintype U] [DecidableEq U] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Exponent.lean:35:0: automatically included section variable(s) unused in theorem `GapExtremal.isCap_capPow`:
+  [Fintype F]
+  [DecidableEq F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] [DecidableEq F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Exponent.lean:39:0: automatically included section variable(s) unused in theorem `GapExtremal.isSep_capPow`:
+  [Fintype F]
+  [DecidableEq F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] [DecidableEq F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Exponent.lean:43:0: automatically included section variable(s) unused in theorem `GapExtremal.card_capPow`:
+  [AddCommGroup U]
+  [Fintype U]
+  [DecidableEq U]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [AddCommGroup U] [Fintype U] [DecidableEq U] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8994/9028] Built GapExtremal.PMain (21s)
+warning: GapExtremal/PMain.lean:44:0: automatically included section variable(s) unused in theorem `GapExtremal.pcard_vertices`:
+  [Field F]
+  [DecidableEq F]
+  [AddCommGroup W]
+  [Module F W]
+  [DecidableEq W]
+  [DecidableEq V]
+  [DecidableEq P]
+  [AddCommGroup U]
+  [Module F U]
+  [DecidableEq U]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Field
+  F] [DecidableEq
+  F] [AddCommGroup
+  W] [Module F
+  W] [DecidableEq W] [DecidableEq V] [DecidableEq P] [AddCommGroup U] [Module F U] [DecidableEq U] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8995/9028] Built GapExtremal.Layered (17s)
+warning: GapExtremal/Layered.lean:33:0: automatically included section variable(s) unused in theorem `GapExtremal.ext_bad`:
+  [Fintype F]
+  [DecidableEq F]
+  [Fintype U]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] [DecidableEq F] [Fintype U] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/Layered.lean:141:0: automatically included section variable(s) unused in theorem `GapExtremal.layered_same`:
+  [Fintype W]
+  [DecidableEq W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype W] [DecidableEq W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8996/9028] Built GapExtremal.WeightCap (17s)
+warning: GapExtremal/WeightCap.lean:52:60: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵S̲e̲t̲.̲m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: GapExtremal/WeightCap.lean:91:66: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: GapExtremal/WeightCap.lean:102:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/WeightCap.lean:106:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/WeightCap.lean:143:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/WeightCap.lean:145:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/WeightCap.lean:150:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: GapExtremal/WeightCap.lean:152:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/WeightCap.lean:130:18: This simp argument is unused:
+  Finset.filter_mem_eq_inter
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hSc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [8997/9028] Built GapExtremal.LayeredExponent (18s)
+⚠ [8998/9028] Built GapExtremal.Single (20s)
+warning: GapExtremal/Single.lean:38:14: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: GapExtremal/Single.lean:38:16: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: GapExtremal/Single.lean:40:0: automatically included section variable(s) unused in theorem `GapExtremal.single_same`:
+  [Fintype F]
+  [DecidableEq F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] [DecidableEq F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8999/9028] Built GapExtremal.SCap (18s)
+warning: GapExtremal/SCap.lean:201:0: automatically included section variable(s) unused in theorem `GapExtremal.fst_mem_actCol`:
+  [Fintype F]
+  [DecidableEq F]
+  [Fintype W]
+  [DecidableEq W]
+  [Fintype V]
+  [DecidableEq V]
+  [DecidableEq P]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype
+  F] [DecidableEq F] [Fintype W] [DecidableEq W] [Fintype V] [DecidableEq V] [DecidableEq P] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/SCap.lean:299:0: automatically included section variable(s) unused in theorem `GapExtremal.isSCap_capPow`:
+  [Fintype F]
+  [DecidableEq F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] [DecidableEq F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/SCap.lean:303:0: automatically included section variable(s) unused in theorem `GapExtremal.actCol_single`:
+  [Fintype F]
+  [DecidableEq F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] [DecidableEq F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [9000/9028] Built GapExtremal.Sphere (17s)
+⚠ [9001/9028] Built GapExtremal.ExponentTwo (22s)
+warning: GapExtremal/ExponentTwo.lean:34:2: Try this:
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9002/9028] Built GapExtremal.ExactOrder (23s)
+warning: GapExtremal/ExactOrder.lean:42:0: automatically included section variable(s) unused in theorem `GapExtremal.padN_nonempty`:
+  [Fintype V]
+  [Fintype H]
+  [DecidableEq H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype H] [DecidableEq H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/ExactOrder.lean:68:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: GapExtremal/ExactOrder.lean:50:0: automatically included section variable(s) unused in theorem `GapExtremal.HostHyp.pad`:
+  [Fintype V]
+  [Fintype H]
+  [DecidableEq H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype H] [DecidableEq H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/ExactOrder.lean:73:0: automatically included section variable(s) unused in theorem `GapExtremal.card_pad`:
+  [DecidableEq V]
+  [DecidableEq H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GapExtremal/ExactOrder.lean:267:2: Try this:
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [9003/9028] Built R434.ExactGraphTransfer (16s)
+⚠ [9004/9028] Built R434.MidpointHosts (25s)
+warning: R434/MidpointHosts.lean:26:0: automatically included section variable(s) unused in theorem `GapExtremal.R434.pairDirection_swap`:
+  [Fintype L]
+  [DecidableEq L]
+  [Fintype R]
+  [DecidableEq R]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype L] [DecidableEq L] [Fintype R] [DecidableEq R] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: R434/MidpointHosts.lean:49:0: automatically included section variable(s) unused in theorem `GapExtremal.R434.midAssign_swap`:
+  [DecidableEq C]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq C] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: R434/MidpointHosts.lean:61:0: automatically included section variable(s) unused in theorem `GapExtremal.R434.direction_of_cross_fibre`:
+  [Fintype L]
+  [DecidableEq L]
+  [Fintype R]
+  [DecidableEq R]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype L] [DecidableEq L] [Fintype R] [DecidableEq R] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9005/9028] Built R434.TripartiteSlack (25s)
+warning: R434/TripartiteSlack.lean:65:0: automatically included section variable(s) unused in theorem `GapExtremal.R434.crossPairs_iff`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: R434/TripartiteSlack.lean:74:0: automatically included section variable(s) unused in theorem `GapExtremal.R434.partOf_card_sum`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: R434/TripartiteSlack.lean:81:0: automatically included section variable(s) unused in theorem `GapExtremal.R434.crossPairs_card`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9006/9028] Built R434.AffineH54 (23s)
+warning: R434/AffineH54.lean:67:78: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [9007/9028] Built R434.TightPieces (25s)
+✔ [9008/9028] Built R434.RoleMatchings (20s)
+⚠ [9009/9028] Built R434.CoreDirections (21s)
+warning: R434/CoreDirections.lean:47:0: automatically included section variable(s) unused in theorem `GapExtremal.R434.H54.triangle_directions_of_parts`:
+  [Fintype R]
+  [DecidableEq R]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype R] [DecidableEq R] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: R434/CoreDirections.lean:55:0: automatically included section variable(s) unused in theorem `GapExtremal.R434.H54.local_vertices_of_short_directions`:
+  [Fintype R]
+  [DecidableEq R]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype R] [DecidableEq R] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: R434/CoreDirections.lean:76:0: automatically included section variable(s) unused in theorem `GapExtremal.R434.H54.signedPrice_lower`:
+  [Fintype R]
+  [DecidableEq R]
+  [CommRing R]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype R] [DecidableEq R] [CommRing R] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: R434/CoreDirections.lean:81:0: automatically included section variable(s) unused in theorem `GapExtremal.R434.H54.signedPrice_triangle`:
+  [Fintype R]
+  [DecidableEq R]
+  [CommRing R]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype R] [DecidableEq R] [CommRing R] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: R434/CoreDirections.lean:87:0: automatically included section variable(s) unused in theorem `GapExtremal.R434.H54.signedPrice_block`:
+  [Fintype R]
+  [DecidableEq R]
+  [CommRing R]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype R] [DecidableEq R] [CommRing R] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [9010/9028] Built R434.TightTriangles (20s)
+✔ [9011/9028] Built R434.GroupedHosts (22s)
+✔ [9012/9028] Built R434.EHPSHostTransfer (24s)
+⚠ [9013/9028] Built R434.LocalTriangleLift (26s)
+warning: R434/LocalTriangleLift.lean:29:0: automatically included section variable(s) unused in theorem `GapExtremal.R434.H54.triangleEdges_block`:
+  [Fintype R]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype R] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: R434/LocalTriangleLift.lean:62:0: automatically included section variable(s) unused in theorem `GapExtremal.R434.H54.blockTriangle_injective`:
+  [Fintype R]
+  [DecidableEq R]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype R] [DecidableEq R] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: R434/LocalTriangleLift.lean:76:0: automatically included section variable(s) unused in theorem `GapExtremal.R434.H54.short_directions_eq_of_blockTriangle`:
+  [Fintype R]
+  [DecidableEq R]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype R] [DecidableEq R] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9014/9028] Built R434.PackingTriangles (24s)
+warning: R434/PackingTriangles.lean:63:4: Try this:
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [9015/9028] Built R434.RobustHosts (23s)
+✔ [9016/9028] Built R434.LocalPacking (25s)
+⚠ [9017/9028] Built R434.EHPSDensity (37s)
+warning: R434/EHPSDensity.lean:223:35: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [9018/9028] Built R434.ResidualIsolates (21s)
+⚠ [9019/9028] Built R434.CoreDefect (22s)
+warning: R434/CoreDefect.lean:21:0: automatically included section variable(s) unused in theorem `GapExtremal.R434.H54.decode_blockEdge`:
+  [Fintype R]
+  [DecidableEq R]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype R] [DecidableEq R] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9020/9028] Built R434.DensityThreshold (26s)
+warning: R434/DensityThreshold.lean:68:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: R434/DensityThreshold.lean:68:34: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [9021/9028] Built R434.UniversalHosts (24s)
+⚠ [9022/9028] Built R434.CoreFractional (19s)
+warning: R434/CoreFractional.lean:31:0: automatically included section variable(s) unused in theorem `GapExtremal.R434.H54.blockTriangle_vertices_card`:
+  [Fintype R]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype R] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: R434/CoreFractional.lean:123:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: R434/CoreFractional.lean:123:19: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [9023/9028] Built R434.FiniteR434 (18s)
+✔ [9024/9028] Built R434.GroupedGap (19s)
+⚠ [9025/9028] Built R434.UniversalR434 (20s)
+warning: R434/UniversalR434.lean:51:2: Try this:
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [9026/9028] Built R434.PolylogGap (21s)
+✔ [9027/9028] Built SplitGap (23s)
+Build completed successfully (9028 jobs).

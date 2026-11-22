@@ -1,0 +1,369 @@
+\documentclass[spanish,11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{fontspec}
+\setmainfont{lmroman10-regular.otf}[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]
+\setsansfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf]
+\setmonofont{lmmono10-regular.otf}[Scale=MatchLowercase]
+\newlength{\LeanCharWidth}
+\usepackage{amsmath,amssymb}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{microtype,parskip}
+\usepackage{graphicx,float,caption}
+\usepackage{longtable,booktabs,array,calc}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage{hyperref,bookmark}
+\usepackage{etoolbox,needspace}
+\setcounter{secnumdepth}{-\maxdimen}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcounter{none}
+\AtBeginEnvironment{longtable}{\Needspace{8\baselineskip}\small}
+\pretocmd{\section}{\Needspace{5\baselineskip}}{}{}
+\pretocmd{\subsection}{\Needspace{4\baselineskip}}{}{}
+\pretocmd{\subsubsection}{\Needspace{4\baselineskip}}{}{}
+\captionsetup{font=small,labelfont=bf}
+\urlstyle{same}
+\AtBeginDocument{\renewcommand{\figurename}{Figura}}
+\clubpenalty=10000\widowpenalty=10000
+\DeclareMathSizes{9}{10}{7}{5}
+\hypersetup{pdflang={es-CL},colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
+\hypersetup{pdftitle={Gaps aditivos casi cuadráticos para particiones de aristas en cliques de grafos split},pdfauthor={Juan Pablo Traverso Gianini}}
+\title{Gaps aditivos casi cuadráticos para particiones de aristas en cliques de grafos split}
+\author{Juan Pablo Traverso Gianini\\\small Investigador independiente, Santiago, Chile\\\small\href{mailto:jtraverso@gmail.com}{jtraverso@gmail.com}\quad\href{https://orcid.org/0009-0003-6068-4096}{ORCID 0009-0003-6068-4096}}
+\date{Preprint 1.0 \enspace · \enspace 21 de noviembre de 2026}
+\begin{document}\raggedbottom\maketitle
+\noindent\textbf{DOI reservado:} 10.5281/zenodo.24408988\\
+\textbf{Repositorio oficial:} \url{https://github.com/jtraverso/split-clique-partition-gap}\\
+\href{https://github.com/jtraverso/split-clique-partition-gap/blob/main/preprints/SPLITGAP/05_formalization/companion-es.pdf}{Guía de la formalización (PDF)}
+\subsection{Resumen}\label{resumen}
+
+Nuestro trabajo sobre el problema 81 de Erdős nos llevó a preguntar cuánto puede ahorrar una partición mínima en cliques de un grafo cordal al admitir pesos fraccionales. Incluso en grafos split, el ahorro puede ser casi cuadrático. Para todo \(n\) suficientemente grande construimos un grafo split conexo de exactamente \(n\) vértices cuyo gap aditivo es al menos
+\[k\,n^2(\log n)^{-5/2}\exp\!\left[-2\sqrt{\log(24/7)\log n}\right]\]
+
+para una constante absoluta \(k>0\). El mismo grafo puede elegirse con conectividad por vértices al menos \(\lceil n/5\rceil\). Sobre bloques afines instalamos copias disjuntas en aristas de un grafo tripartito de quince vértices. Cada copia admite una descomposición fraccional en triángulos, pero carece de descomposición entera. Un empaquetamiento entero puede usar triángulos cuyas aristas pertenecen a tres bloques distintos. El potencial de punto medio de Elsholtz, Hunter, Proske y Sauermann permite asignar pesos con signo a las aristas de modo que todo triángulo de ese tipo tenga peso positivo. Mediante las asignaciones a hosts desarrolladas en la serie sobre Erdős 81, convertimos el déficit del empaquetamiento residual en un gap entre los dos números de partición en cliques.
+
+\subsection{1. Introducción}\label{introducciuxf3n}
+
+En una partición en cliques de un grafo simple finito \(G\), cada arista pertenece a exactamente una de las cliques elegidas. Denotamos por \(cp(G)\) el menor número de cliques de una partición. Su análogo fraccional \(cp^*(G)\) es el mínimo peso total de una asignación de pesos no negativos a las cliques tal que los pesos en cada arista sumen uno. Las cliques que se usan como piezas tienen al menos dos vértices. Todos los logaritmos son naturales.
+
+Un grafo es cordal si carece de ciclos inducidos de longitud cuatro o más. Los vértices de un grafo split se pueden partir en una clique y un conjunto independiente, por lo que todo grafo split es cordal. Erdős, Ordman y Zalcstein estudiaron el máximo del número de partición entera para grafos cordales {[}8{]}, y Chen, Erdős y Ordman trataron el caso split {[}9{]}. Un preprint reciente de Okechukwu determina el extremo cordal para todo orden suficientemente grande {[}10{]}.
+
+La pregunta de este artículo surgió de nuestra serie sobre el problema 81 de Erdős. El artículo I redujo el empaquetamiento fraccional de triángulos en grafos split a un programa lineal en tres variables {[}14{]}. El artículo II mostró que un grafo split completo alcanza el máximo del déficit de cobertura fraccional de triángulos en grafos cordales {[}15{]}. Para particiones enteras, el artículo III utilizó empaquetamientos de triángulos para construir particiones en grafos split con \(cp(G)\le n^2/6+O(n)\) {[}1{]}. Estos resultados nos llevaron a comparar los dos óptimos en el \emph{mismo} grafo cordal. Su diferencia, \(\Delta(G)=cp(G)-cp^*(G)\), mide una pérdida que los valores extremos por separado no determinan. Volvemos a los grafos split por la pregunta sobre redondeo del artículo III {[}1, problema 12.1{]} y porque las asignaciones a hosts del artículo V {[}5, §5{]} permiten realizar una obstrucción al redondeo como gap de partición en cliques.
+
+Para empaquetamientos disjuntos en aristas, Haxell y Rödl probaron que redondear un empaquetamiento fraccional de copias de un grafo fijo cuesta \(o(n^2)\) {[}7{]}. Yuster extendió el resultado a una familia fija de grafos y preguntó cuán grande puede ser la pérdida para triángulos {[}6, §4{]}. Para empaquetamientos de triángulos, que pueden dejar aristas sin cubrir, Balogh, He, Krueger, Nguyen y Wigal construyeron grafos con gap \(n^{2-o(1)}\) {[}2, teorema 5.8{]}. Para particiones exactas en cliques de orden arbitrario, su teorema de redondeo con costes unitarios da \(\Delta(G)=o(n^2)\) uniformemente para todos los grafos de \(n\) vértices {[}2, teorema 1.10{]}.
+
+De su construcción para coberturas también se deduce un gap casi cuadrático para particiones exactas en grafos generales {[}2, proposición 5.3 y teorema 5.5{]}. En un grafo de tipo cocktail party con \(r\) partes de tamaño dos, asignar peso \(4/2^r\) a cada transversal da carga uno a cada arista. La partición fraccional cuesta a lo sumo cuatro y toda partición entera es una cobertura. Al amplificar mediante un hipergrafo lineal sin triángulos {[}11, 12{]}, cada clique con alguna arista pertenece a un único bloque y los gaps locales se suman. En grafos split conexos necesitamos otro argumento para controlar los triángulos que cruzan bloques.
+
+\subsubsection{Teorema 1.1}\label{teorema-1.1}
+
+Existen constantes absolutas \(k>0\) y \(N\) tales que para todo entero \(n\ge N\) existe un grafo split conexo \(G\) de exactamente \(n\) vértices con
+\[\Delta(G)\ge k\,\frac{n^2}{(\log n)^{5/2}}\,\exp[-C\sqrt{\log n}],
+\qquad C=2\sqrt{\log(24/7)}.\]
+
+\subsubsection{Corolario 1.2}\label{corolario-1.2}
+
+Para todo \(\eta>0\) y todo \(n\) suficientemente grande existe un grafo split conexo de \(n\) vértices con \(\Delta(G)\ge n^2\exp[-(C+\eta)\sqrt{\log n}]\). En efecto, \((5/2)\log\log n-\log k=o(\sqrt{\log n})\), de modo que el término adicional \(\eta\sqrt{\log n}\) absorbe el prefactor logarítmico.
+
+Sea \(\Gamma(n)\) el mayor gap entre los grafos split conexos de orden \(n\). Del teorema 1.1 y de la cota superior uniforme se deducen \(\log\Gamma(n)/\log n\to2\) y \(\Gamma(n)/n^2\to0\). Por tanto, \(\Gamma(n)\) no es \(O(n^{2-\varepsilon})\) para ningún \(\varepsilon>0\) fijo. En los mismos grafos, el gap de empaquetamiento de triángulos es al menos \(\Delta(G)/2\) (corolario 7.1), lo que descarta la cota lineal propuesta en {[}1, problema 12.1{]}.
+
+\subsubsection{Corolario 1.3 (el extremo cordal)}\label{corolario-1.3-el-extremo-cordal}
+
+Sea \(\Gamma_{\rm ch}(n)\) el máximo de \(\Delta(G)\) sobre todos los grafos cordales de orden \(n\). Entonces \[\lim_{n\to\infty}\frac{\log\Gamma_{\rm ch}(n)}{\log n}=2,\qquad
+\lim_{n\to\infty}\frac{\Gamma_{\rm ch}(n)}{n^2}=0.\] Todo grafo split es cordal, por lo que la cota inferior del teorema 1.1 se aplica a \(\Gamma_{\rm ch}(n)\). Su logaritmo es \(2\log n-O(\sqrt{\log n}+\log\log n)\). La estimación uniforme \(\Delta(G)=o(n^2)\) de {[}2, teorema 1.10{]} con costes unitarios da el segundo límite y acota por dos el límite superior en el primero.
+
+\subsubsection{Teorema 1.4 (conectividad del mismo grafo)}\label{teorema-1.4-conectividad-del-mismo-grafo}
+
+El grafo del teorema 1.1 puede elegirse con conectividad por vértices \(\kappa(G)\ge\lceil n/5\rceil\). La construcción da al menos \(\lceil n/5\rceil\) vértices adyacentes a todos los demás.
+
+La obstrucción local de la sección 3 pierde fuerza si un empaquetamiento entero puede completar triángulos con aristas de copias distintas. En nuestra construcción, las direcciones de las aristas de un triángulo así satisfacen \(a,b,(a+b)/2\). El soporte plano de Elsholtz, Hunter, Proske y Sauermann {[}4{]} admite estas ternas y proporciona un potencial con defecto positivo en cada terna no constante. Al asignar pesos con signo a las aristas, ese defecto acota el número de triángulos mixtos. Una asignación a hosts en el sentido de {[}5, §5{]} convierte entonces la pérdida de empaquetamiento en un gap sobre un grafo split. El coeficiente \(C\) proviene de la densidad límite \(7/24\) de la construcción plana. Su optimalidad para grafos split sigue abierta.
+
+\subsection{2. Transferencia exacta a grafos split}\label{transferencia-exacta-a-grafos-split}
+
+Sea \(B\) un grafo sobre un conjunto finito \(V\) y sea \(J=\binom V2\setminus E(B)\). Para un conjunto \(Q\subseteq V\) de al menos dos elementos, sea \(e_B(Q)\) el número de sus aristas de \(B\). Definimos
+\[w(Q)=2e_B(Q)-\binom{|Q|}{2}-1.\]
+
+Un empaquetamiento residual es una colección de tales conjuntos en la que ningún par de vértices pertenece a dos conjuntos. Un empaquetamiento residual fraccional asigna pesos no negativos a los conjuntos, con peso total a lo sumo uno en cada par. Denotamos por \(I(B)\) y \(F(B)\) el máximo puntaje total y el máximo puntaje ponderado, respectivamente.
+
+\subsubsection{Lema 2.1}\label{lema-2.1}
+
+Supongamos que existe una familia \((N_h)_{h\in H}\) de conjuntos independientes de \(B\) y que cada par de \(J\) se puede asignar a un índice \(h\) de modo que ambos extremos estén en \(N_h\). Supongamos además que los pares asignados a cada \(h\) forman un matching. Sea \(G\) el grafo split con clique \(V\) y conjunto independiente \(H\) en el que cada vértice \(h\), llamado host, tiene vecindad \(N_h\). Entonces \(\Delta(G)=F(B)-I(B)\).
+
+\textbf{Demostración.} Respecto de la partición en aristas individuales, una clique de orden \(r\) ahorra \(\binom r2-1\) piezas. En una partición fraccional se multiplica el ahorro por el peso de la clique, pues la carga total en cada arista es uno. Solo las cliques contenidas en \(V\) entran en el empaquetamiento residual. Cada una de estas cliques \(Q\) ahorra \(w(Q)+2|J\cap\binom Q2|\).
+
+Una clique formada por un host y \(u\ge1\) vértices del núcleo ahorra \(\binom{u+1}2-1\le2\binom u2\). Todos sus pares del núcleo pertenecen a \(J\), pues \(N_h\) es independiente en \(B\). Entre ambos tipos de cliques, cada par de \(J\) recibe carga total uno. El puntaje residual aporta a lo sumo \(I(B)\) en una partición entera y \(F(B)\) en una fraccional, con un ahorro adicional de a lo sumo \(2|J|\) en ambos casos.
+
+Recíprocamente, un empaquetamiento residual óptimo deja capacidad disponible en los pares de \(J\). Para cada par, el host asignado proporciona un triángulo que ocupa esa capacidad y ahorra el doble. Dos pares distintos asignados al mismo host tienen extremos disjuntos, por lo que sus triángulos respetan las capacidades de las aristas incidentes al host. Las aristas individuales completan las capacidades restantes. Los ahorros máximos son por tanto \(I(B)+2|J|\) y \(F(B)+2|J|\), y su diferencia es \(\Delta(G)\).
+
+\begin{figure}[htbp]
+\centering\input{figures/host-fiber.tex}
+\caption{Dos pares en la fibra de un host. Un par de carga residual $\ell_i$ recibe peso de reparación $1-\ell_i$. Los pares distintos usan aristas disjuntas en $h$. En la construcción por puntos medios de la sección 5, la posición $y$ se empareja con $2c-y$.}\label{fig:host-fiber}
+\end{figure}
+
+\subsection{3. Una obstrucción tripartita}\label{una-obstrucciuxf3n-tripartita}
+
+Etiquetamos los vértices de cada parte de \(K_{5,5,5}\) con \(0,\ldots,4\). Suprimimos las aristas de los siete triángulos
+\[(2,2,2),(1,2,1),(3,1,4),(0,3,1),(0,4,0),(2,3,0),(4,0,3).\]
+
+Sus conjuntos de aristas son disjuntos. El grafo restante \(H\) tiene 18 aristas entre cada par de partes. Admite una descomposición fraccional en triángulos y carece de descomposición entera.
+
+En la tabla, la fila y la columna indican los roles en las dos primeras partes. Cada entrada enumera los posibles terceros roles de la descomposición fraccional. Cada arista restante aparece en exactamente dos de las ternas de la tabla. Así, al dar peso \(1/2\) a cada terna, toda arista recibe carga uno.
+
+\begin{center}
+\begin{tabular}{cccccc}
+\toprule
+ & 0 & 1 & 2 & 3 & 4 \\
+\midrule
+0 & 2, 4 & 2, 3 & 3, 4 & — & — \\
+1 & 0, 2 & 0, 2 & — & 3, 4 & 3, 4 \\
+2 & 1, 4 & 1, 3 & — & — & 3, 4 \\
+3 & 0, 1 & — & 0, 3 & 2, 3 & 1, 2 \\
+4 & — & 0, 1 & 0, 4 & 2, 4 & 1, 2 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Para restringir los triángulos disponibles en una descomposición entera, asignamos a cada arista el precio entero del apéndice A. El precio de un triángulo es la suma de los precios de sus tres aristas, y la suma sobre todas las aristas de \(H\) es cero. De las \(5^3=125\) ternas de roles, exactamente 45 forman triángulos en \(H\). Los 36 de la tabla fraccional tienen precio cero y los otros nueve tienen precio positivo. Por tanto, una descomposición entera solo puede usar los triángulos de la tabla. En la lista cíclica
+\[(3,2,3),(0,2,3),(0,2,4),(0,0,4),(0,0,2),
+(1,0,2),(1,0,0),(3,0,0),(3,2,0)\]
+
+cada par consecutivo comparte una arista, incluidos el último y el primero. Exactamente dos triángulos de la tabla contienen cada una de esas aristas. Sus indicadores de selección deben sumar uno. Este argumento de paridad aparece en los grafos de soporte de arreglos triestocásticos {[}3{]}. El ciclo impar obliga a que cada indicador sea \(1/2\), incompatible con una descomposición entera.
+
+\begin{figure}[htbp]
+\centering\input{figures/odd-cycle.tex}
+\caption{Los nueve triángulos de la obstrucción de paridad. Las etiquetas de los enlaces indican las aristas compartidas, donde $A_i,B_j,C_k$ denotan vértices de las tres partes. Una vez excluidos los nueve triángulos de precio positivo, cada enlace obliga a que los dos indicadores incidentes sumen uno.}\label{fig:odd-cycle}
+\end{figure}
+
+Las siete ternas suprimidas también pueden verse como entradas prescritas de un cuadrado latino parcial de orden cinco. Un triángulo de fila \(i\), columna \(j\) y símbolo \(k\) llena la entrada correspondiente. Descomponer las aristas restantes completaría el cuadrado. La tabla de pesos medios proporciona una completación fraccional.
+
+\subsection{4. El gap residual}\label{el-gap-residual}
+
+Sea \(T\) un grupo abeliano finito de orden impar y sea \(\varnothing\ne A\subseteq T\). Cada vértice del núcleo \((t,r,y)\) tiene un color \(t\in\{0,1,2\}\) que indica su parte, un rol \(r\in\{0,\ldots,4\}\) dentro de ella y una posición \(y\in T\). Cada \((a,x)\in A\times T\) indexa un bloque, la copia de \(H\) sobre los vértices \((t,r,x+ta)\). Sea \(B\) la unión de sus aristas y sea \(\tau=|A||T|\). Para una arista del color \(s\) en la posición \(y_s\) al color \(t>s\) en \(y_t\), la dirección es \(a=(y_t-y_s)/(t-s)\) y la ordenada en el origen es \(x=y_s-sa\). La división por dos es única en un grupo de orden impar. Cada arista de \(B\) pertenece, por tanto, a un solo bloque, lo que da \(54\tau\) aristas en total.
+
+Para \(v=|Q|\) y \(e=e_B(Q)\), la cota tripartita es \(e\le\lfloor v^2/3\rfloor\). Definimos
+\[s(Q)=\tfrac23 e-w(Q)=\binom v2+1-\tfrac43e.\]
+
+Entonces \(s(Q)\ge0\), con igualdad exactamente para los triángulos de \(B\) y los subgrafos tripartitos completos con dos vértices en cada parte. Para \(2\le v\le8\), los máximos sucesivos de \(e\) son \(1,3,5,8,12,16,21\). Cuando \(v=3,6\), la igualdad exige el máximo. En los demás casos, y en el entero inmediatamente inferior al máximo cuando \(v=3,6\), la sustitución da \(s(Q)\ge e/27\). Disminuir \(e\) solo aumenta \(s(Q)-e/27\). Para \(v\ge9\),
+\[s(Q)-e/27\ge \frac{(v-9)(7v-18)}{162}\ge0.\]
+
+Aquí \(s(Q)\ge e/27\), por lo que una holgura nula implicaría \(e=0\) y por tanto \(s(Q)=\binom v2+1>0\). Un \(K_{2,2,2}\) completo se parte en cuatro triángulos etiquetando con bits los dos vértices de cada parte y tomando las ternas de paridad par.
+
+La cota \(w(Q)\le 2e_B(Q)/3\) implica \(F(B)\le36\tau\). Para la desigualdad inversa, se combinan las descomposiciones fraccionales locales, pues los bloques son disjuntos en aristas y cada triángulo solo usa aristas de su bloque. Cada bloque aporta 36 triángulos de peso \(1/2\) y puntaje dos. Concluimos que \(F(B)=36\tau\).
+
+Un triángulo que cruza bloques tiene incrementos sucesivos de posición \(a,b\) y dirección de la arista larga \(c=(a+b)/2\), como en la figura 3. Sus tres aristas pertenecen a bloques distintos siempre que \(a\ne b\). El lema siguiente asigna un coste a cada triángulo de este tipo.
+
+\begin{figure}[htbp]
+\centering\input{figures/signed-triangle.tex}
+\caption{Direcciones y pesos con signo. Si $a=b$, las aristas están en un mismo bloque y sus pesos suman cero. Si $a\ne b$, pertenecen a tres bloques y el defecto de punto medio da peso total al menos $\delta$.}\label{fig:signed-triangle}
+\end{figure}
+
+\subsubsection{Lema 4.1}\label{lema-4.1}
+
+Supongamos que \(f:A\to\mathbb R\) tiene oscilación \(R=\max f-\min f\) y que
+\[f(a)+f(b)-2f((a+b)/2)\ge\delta>0\]
+
+siempre que \(a\ne b\) y \(a,b,(a+b)/2\in A\). Entonces
+\[F(B)-I(B)\ge \frac{2\tau}{9(1+2R/\delta)}.\]
+
+\textbf{Demostración.} Sea \(\mathcal P\) un empaquetamiento entero de puntaje \(F(B)-d\) y sea \(U\) el conjunto de aristas de \(B\) que deja sin cubrir. Cada arista cubierta pertenece a una sola pieza. Como \(F(B)=\tfrac23|E(B)|\), al sumar la definición de holgura obtenemos
+\[d=\tfrac23|U|+\sum_{Q\in\mathcal P}s(Q).\]
+
+Sea \(X\) la unión de \(U\) y las aristas de \(B\) situadas en piezas de holgura positiva. Cada una de estas piezas contiene a lo sumo \(27s(Q)\) aristas de \(B\), por lo que \(|X|\le27d\). Las aristas restantes se parten en triángulos al descomponer cada \(K_{2,2,2}\) de holgura nula como antes.
+
+Escribimos \(g=f-(\min f+2\max f)/3\). Una arista de dirección \(a\) recibe peso \(g(a)\) entre los colores 0 y 1 o 1 y 2, y peso \(-2g(a)\) entre los colores 0 y 2. Cada bloque tiene 18 aristas de cada tipo, todas de la misma dirección, y su peso total es cero. Como \(-2R/3\le g\le R/3\), cada arista tiene peso al menos \(-2R/3\). En un triángulo, los pesos suman \(g(a)+g(b)-2g((a+b)/2)\). Esta suma se anula dentro de un bloque y es al menos \(\delta\) en un triángulo mixto. Los triángulos parten \(E(B)\setminus X\). Si \(z\) de ellos son mixtos, su contribución está acotada por el opuesto del peso total de \(X\). En particular, \(\delta z\le(2R/3)|X|\).
+
+Los vértices de \(K_{5,5,5}\) tienen grado par y suprimir un triángulo quita dos aristas en cada uno de sus vértices. Un empaquetamiento de 17 triángulos en \(H\) dejaría tres aristas con grado par en todo vértice. En un grafo simple, esas tres aristas deben formar un triángulo que completaría la descomposición prohibida de \(H\). Por tanto, a lo sumo 16 triángulos del empaquetamiento pueden estar enteramente en un bloque. El apéndice A exhibe 16 triángulos disjuntos en aristas que alcanzan la cota.
+
+Cada arista pertenece a un único bloque. En cada bloque hay al menos \(54-3\cdot16=6\) aristas en \(X\) o en un triángulo mixto. Al sumar sobre los bloques obtenemos \(6\tau\le |X|+3z\). Junto con \(\delta z\le (2R/3)|X|\) y \(|X|\le27d\) se deduce \(6\tau\le27(1+2R/\delta)d\). Basta tomar un empaquetamiento entero óptimo.
+
+\subsection{5. Número de hosts y orden exacto}\label{nuxfamero-de-hosts-y-orden-exacto}
+
+Supongamos que \(T\setminus A\) se parte en \(s\) clases no vacías \(U\) que satisfacen \((U+U)/2\subseteq T\setminus A\). El tipo de un par de roles es el par no ordenado de etiquetas de color y rol \((t,r)\), con repetición permitida. De los 66 tipos que nunca dan aristas de \(H\), 15 repiten una etiqueta, \(3\binom52=30\) emparejan roles distintos de un mismo color y 21 corresponden a las aristas entre colores suprimidas en la sección 3. Para cada tipo y cada \(c\in T\) añadimos un host cuya vecindad contiene el rol o los dos roles completos. Asignamos cada par según su tipo y su punto medio \(c\). Las vecindades son independientes en \(B\). Dada la posición \(y\) de un extremo, su pareja en la fibra de punto medio \(c\) tiene posición \(2c-y\), de modo que la fibra es un matching.
+
+Para cada uno de los 54 tipos de pares de roles que dan una arista de \(H\), ordenamos los colores como \(i<k\) y ponemos \(d=k-i\in\{1,2\}\). Para cada clase \(U\) y cada \(c\in T\) añadimos un host con posiciones \(c-du/2\) en el color \(i\) y \(c+du/2\) en el color \(k\), para \(u\in U\). Dos vértices en roles opuestos de esta vecindad tienen dirección \((u+u')/2\notin A\) y dentro de un rol no hay aristas de \(B\). Cada par de este tipo exterior a \(B\) se asigna según su punto medio y la clase de su dirección. El punto medio vuelve a determinar la pareja de cada extremo. Estos hosts satisfacen el lema 2.1. Sus vecindades son no vacías, por lo que el grafo obtenido es conexo y su orden total es
+\[(81+54s)|T|.\]
+
+Podemos ampliar las vecindades conservando la asignación de pares. Para dos etiquetas de rol cualesquiera \(i,k\) existe un rol \(s\) que no es adyacente a ninguna de ellas en \(H\). Si \(i\) y \(k\) tienen el mismo color sirve cualquier rol de ese color. En caso contrario, algún rol del color de \(i\) perdió su arista hacia \(k\), pues \(k\) aparece en al menos una de las siete ternas suprimidas en la sección 3. Añadimos los \(t=|T|\) vértices de rol \(s\) a la vecindad de cada host de tipo \(\{i,k\}\). La unión es independiente en \(B\). Los pares asignados al host siguen formando el mismo matching, por lo que el lema 2.1 conserva ambos ahorros óptimos.
+
+Para alcanzar un orden mayor prescrito añadimos hosts cuyos vecinos son los \(t\) vértices de un mismo rol. Los hosts originales conservan todos los pares asignados. Cada nuevo host añade \(t\) aristas y mantiene fijos ambos ahorros óptimos. Así, \(q\) hosts adicionales aumentan \(cp\) y \(cp^*\) en exactamente \(qt\). Cada host tiene ahora al menos \(t\) vecinos en una clique de orden \(15t\). Al eliminar menos de \(t\) vértices sobreviven una clique no vacía y un vecino en ella para cada host restante. Por tanto, \(\kappa(G)\ge t\). En presencia de un host de relleno, eliminar sus \(t\) vecinos lo aísla y se obtiene la igualdad.
+
+\subsubsection{Proposición 5.1 (transferencia desde un conjunto de direcciones)}\label{proposiciuxf3n-5.1-transferencia-desde-un-conjunto-de-direcciones}
+
+Bajo las hipótesis del lema 4.1, sea \(\sigma(A)\) el mínimo número de clases no vacías de una partición de \(T\setminus A\) tal que \((U+U)/2\subseteq T\setminus A\) en cada clase. Para el complemento vacío se toman cero clases. Existe un grafo split \(G\) con \(\kappa(G)\ge|T|\) que satisface
+\[|V(G)|=(81+54\sigma(A))|T|,\qquad
+\Delta(G)\ge\frac{2|A||T|}{9(1+2R/\delta)}.\]
+
+En efecto, las clases unitarias dan una partición admisible, por lo que se alcanza el mínimo. Al aplicar la construcción de hosts a una partición mínima se obtiene el orden exacto. El lema 2.1 identifica el gap con \(F(B)-I(B)\), al que se aplica el lema 4.1. La elección de direcciones interviene a través de su cardinalidad, el número de clases del complemento y el cociente \(R/\delta\) del potencial.
+
+\subsubsection{Adición de vértices universales}\label{adiciuxf3n-de-vuxe9rtices-universales}
+
+El grafo residual \(B\) es tripartito. Denotemos por \(V\) su conjunto de vértices y por \(V_0,V_1,V_2\) sus clases de color. Añadimos a este grafo un conjunto \(W\) de \(x>0\) vértices aislados en \(B\) y obtenemos \(B'\). Para una pieza \(Q\subseteq V\cup W\), sean \(S=Q\cap V\) y \(r=|Q\cap W|\). Su puntaje satisface
+\[w_{B'}(Q)=w_B(S)-r|S|-\binom r2\]
+
+cuando \(|S|\ge2\). Una pieza con \(|S|<2\) tiene puntaje negativo. Descartar esas piezas y proyectar las demás sobre \(V\) preserva las capacidades de todos los pares. Dos piezas conservadas de un empaquetamiento entero no pueden tener la misma proyección, pues compartirían un par. En un empaquetamiento fraccional sumamos los pesos de las proyecciones coincidentes. El puntaje proyectado es al menos el original, y los empaquetamientos originales se levantan a \(B'\) con el mismo puntaje. Así, \(I(B')=I(B)\) y \(F(B')=F(B)\).
+
+En el grafo split ampliamos el núcleo a \(V\cup W\) e incluimos \(W\) en la vecindad de cada host anterior. La asignación de pares de \(V\) sigue siendo válida. Etiquetamos el núcleo ampliado mediante una biyección \(\ell:V\cup W\to\mathbb Z/(|V|+x)\mathbb Z\). Para cada \(i\in\{0,1,2\}\) usamos \(|V|+x\) hosts con vecindad \(W\cup V_i\), uno por cada suma de etiquetas. Asignamos cada par de \(W\times V_i\) según la suma de sus etiquetas. Los pares internos de \(W\) se asignan por la misma regla a la familia de hosts de índice \(i=0\). Como \(\ell\) es inyectiva en \(V\cup W\), un extremo y la suma determinan el otro extremo incluso en la familia \(i=0\), que admite ambos tipos de pares. Así, cada fibra es un matching. Las nuevas vecindades son independientes en \(B'\) por la elección de \(V_i\) y por el aislamiento de \(W\).
+
+Los hosts adicionales para alcanzar el orden prescrito tienen vecindad \(W\) y no reciben pares. El lema 2.1 da el mismo gap tras la ampliación y el relleno. Cada vértice de \(W\) es adyacente a todos los demás vértices del grafo split. Al eliminar menos de \(x\) vértices sobrevive un vértice universal, por lo que el grafo restante es conexo.
+
+\subsection{6. Elección de las direcciones}\label{elecciuxf3n-de-las-direcciones}
+
+Fijemos \(0<\epsilon<7/48\). La construcción poligonal explícita de {[}4, proposición 2.2 y definición 4.1{]} da un conjunto \(S\subseteq[0,1)^2\) de área al menos \(7/24-\epsilon\) y una función \(f:S\to[0,100/\epsilon^2]\). Para \(x,y,z\in S\) con \(x+z=2y\bmod1\) se cumple
+\[f(x)+f(z)-2f(y)\ge\|x-z\|^2.\]
+
+Para un entero impar \(m\), sea \(S_m\subseteq(\mathbb Z/m)^2\) el conjunto de puntos de la grilla cuyos representantes \(u\in\{0,\ldots,m-1\}^2\) satisfacen \(u/m\in S\). Necesitaremos una cota uniforme para el error de la grilla al variar el polígono.
+
+\subsubsection{Lema 6.1 (discretización uniforme)}\label{lema-6.1-discretizaciuxf3n-uniforme}
+
+Para todo \(0<\epsilon<7/48\) y todo entero impar positivo \(m\),
+\[\left|\,|S_m|/m^2-\operatorname{area}(S)\right|\le 33/m.\]
+
+\textbf{Demostración.} Dividimos el cuadrado unidad en celdas semiabiertas de lado \(1/m\) y tomamos como representante de cada celda su esquina inferior izquierda. Solo las celdas cuya clausura toca la frontera pueden contribuir al error. La frontera está contenida en \(a=1/2\), \(b=1/2\), \(2a+b=3/2+\epsilon\), las cuatro rectas \(a+b\in\{2/3,7/6,7/6+\epsilon,17/12\}\) y los cuatro lados del cuadrado. Para un segmento de pendiente de valor absoluto a lo sumo uno, su altura varía a lo sumo \(1/m\) en cada una de las \(m\) columnas cerradas. Su proyección en cada columna corta a lo sumo tres intervalos cerrados de fila, incluidos los contactos en los extremos. Intercambiar filas y columnas da la misma cota para pendientes mayores y segmentos verticales. Los once segmentos cortan por tanto a lo sumo \(33m\) celdas en total y el error es a lo sumo \(33/m\).
+
+En particular, \(|S_m|\ge\rho m^2\) para todo \(m\) suficientemente grande, donde \(\rho=7/24-2\epsilon\). Al reescalar el potencial a \(m^2 f(u/m)\) obtenemos defecto al menos uno en cada relación no trivial de punto medio y oscilación a lo sumo \(100m^2/\epsilon^2\).
+
+Escribamos \(z=a+b\) para un punto \((a,b)\) del cuadrado unidad. Las tres ramas de \(S\) son (i) \(a\ge1/2\) y \(2/3<z\le7/6\), (ii) \(a\ge1/2\), \(b<1/2\) y \(7/6+\epsilon\le z\le17/12\), y (iii) \(a<1/2\), \(7/6+\epsilon\le z\le17/12\) y \(2a+b\ge3/2+\epsilon\). En (iii), la cota inferior para \(z\) implica \(b>1/2\). Los siguientes seis conjuntos convexos cubren el complemento dentro del cuadrado. Cada fila, incluida la frontera indicada, es disjunta de \(S\).
+
+\begin{center}
+\begin{tabular}{cc}
+\toprule
+Fila & Condiciones \\
+\midrule
+0 & $z\le 2/3$ \\
+1 & $a<1/2$, $z<7/6+\epsilon$ \\
+2 & $7/6<z<7/6+\epsilon$ \\
+3 & $7/6<z$, $a\ge1/2$, $b\ge1/2$ \\
+4 & $a<1/2$, $2a+b<3/2+\epsilon$ \\
+5 & $z>17/12$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Para comprobar la cobertura, tomemos un punto fuera de las seis filas. Su suma pertenece a \((2/3,17/12]\). Si \(z\le7/6\), al quedar fuera de la fila 1 debe cumplirse \(a\ge1/2\), lo que da la primera rama de \(S\). En otro caso, \(z\ge7/6+\epsilon\). Si \(a\ge1/2\), quedar fuera de la fila 3 obliga a \(b<1/2\) y se aplica la segunda rama. Si \(a<1/2\), entonces \(z>7/6\) implica \(b>1/2\) y quedar fuera de la fila 4 da la última desigualdad de la tercera rama. Recíprocamente, cada fila infringe una condición necesaria de cada rama de \(S\).
+
+Asignamos a cada punto exterior de la grilla la primera fila aplicable y las paridades de sus dos representantes enteros. Cuando las paridades coinciden, el punto medio ordinario tiene coordenadas enteras y representa al punto medio modular para \(m\) impar. Aunque las filas se solapen, la convexidad mantiene el punto medio en la fila elegida y, por tanto, fuera de \(S_m\). En el producto registramos el índice del primer factor que falla, su fila y sus paridades. Dos etiquetas iguales fuerzan al punto medio a quedar fuera de \(S_m\) en ese factor. Así se obtienen a lo sumo \(24j\) clases para \(T=(\mathbb Z/m)^{2j}\) y \(A=S_m^j\). Al sumar el potencial sobre los factores se obtiene defecto al menos uno y oscilación a lo sumo \(100jm^2/\epsilon^2\). Antes de la ampliación, la construcción de la sección 5 utiliza a lo sumo \((81+1296j)m^{2j}\) vértices. Sea \(b_j=255+2880j\) el multiplicador mayor utilizado en la prueba formal.\footnote{Lean reserva \(2+24j\) etiquetas para cada uno de los 120 pares no ordenados de roles con repetición, lo que da el multiplicador \(15+120(2+24j)=255+2880j\).} Si \(|S_m|\ge\rho m^2\), los lemas 2.1 y 4.1 dan un grafo de base \(G_0\) tal que
+\[|V(G_0)|\le b_j m^{2j},\qquad
+ \Delta(G_0)\ge\frac{2\rho^j m^{4j}}{9(1+200jm^2/\epsilon^2)}.\]
+
+\subsubsection{Demostración de los teoremas 1.1 y 1.4}\label{demostraciuxf3n-de-los-teoremas-1.1-y-1.4}
+
+Sean \(h_j=25b_j\), \(\rho_0=7/24\), \(c_0=-\log\rho_0\), \(L=\log n\) y \(j=\lfloor\sqrt{L/c_0}\rfloor\). Tomamos \(\epsilon=7/(1080j)\) y el mayor entero impar \(m\le X=(n/h_j)^{1/(2j)}\). Como \(\log X=(L-O(\log j))/(2j)\), se tiene \(X/j\to\infty\). En particular, \(m\ge12000j\) para órdenes suficientemente grandes, de modo que \(33/m\le\epsilon\), y de \(m>X-2\) se deduce \((m/X)^{4j}\ge(1-2/X)^{4j}=1-o(1)\).
+
+Por el lema 6.1 y la cota de área, \(|S_m|/m^2\ge\rho_0-2\epsilon\ge\rho_0(1-2/(3j))\). La desigualdad de Bernoulli da \((1-2/(3j))^j\ge1/3\), por lo que la densidad del producto es al menos \(\rho_0^j/3\). La oscilación del potencial del producto es a lo sumo \(100(1080/7)^2j^3m^2\). El grafo de base tiene orden \(n_0\le b_jm^{2j}\le n/25\). Ponemos \(x=\lceil n/5\rceil\) y aplicamos la construcción con vértices universales de la sección 5. Antes del relleno, el orden ampliado es \(n_0+x+3(|V|+x)\le4n_0+4x\le n\) para \(n\ge100\). La ampliación y el relleno conservan el gap. Por tanto,
+\[\Delta(G)\gg\frac{\rho_0^j m^{4j}}{j^3m^2}
+ \gg\frac{n^2}{j^5}\exp(-c_0j-L/j).\]
+
+Aquí \(m^{4j}\gg X^{4j}=n^2/h_j^2\), \(m^2\le e^{L/j}\) y \(h_j=O(j)\). Dos potencias de \(j\) proceden del número de vértices y tres del potencial. Finalmente, \(c_0j+L/j-2\sqrt{c_0L}=c_0(j-\sqrt{L/c_0})^2/j=O(1/j)\) y \(j^{-5}\asymp L^{-5/2}\). Queda demostrado el teorema 1.1, y los \(x\) vértices universales dan el teorema 1.4.
+
+La construcción da un algoritmo determinista para enumerar las aristas. Mediante comparaciones enteras se eligen el mayor \(j\) que satisface \(24^{j^2}\le n7^{j^2}\) y el mayor impar \(m\) con \(h_jm^{2j}\le n\). Las desigualdades racionales determinan el soporte y las etiquetas exteriores. Podemos numerar los vértices del núcleo y los nuevos vértices en orden lexicográfico y usar las sumas de sus etiquetas para asignar los nuevos pares. Como \(m^{2j}\le n\) y \(j=O(\sqrt{\log n})\), construir las vecindades y enumerar las aristas toma tiempo polinomial en \(n\).
+
+\subsection{7. Consecuencias para empaquetamientos triangulares y mixtos}\label{consecuencias-para-empaquetamientos-triangulares-y-mixtos}
+
+El problema 12.1 de {[}1{]} pregunta si la diferencia entre los números de empaquetamiento fraccional y entero de triángulos en grafos split es \(O(n)\). Los mismos grafos dan una respuesta negativa. Denotamos por \(\nu_3^*(G)\) y \(\nu_3(G)\) el máximo peso fraccional y el máximo número de triángulos disjuntos en aristas, respectivamente.
+
+\subsubsection{Corolario 7.1}\label{corolario-7.1}
+
+Para cada grafo construido en las secciones 4--6, incluso después de la ampliación por vértices universales y del relleno,
+\[\nu_3^*(G)-\nu_3(G)\ \ge\ \tfrac12\Delta(G).\]
+
+En efecto, el óptimo fraccional de la sección 4 utiliza únicamente triángulos. Su completación en la sección 2 solo utiliza triángulos y aristas individuales, y las aristas adicionales de los hosts se pueden cubrir individualmente. Un triángulo de peso \(x\) ahorra \(2x\) respecto de las aristas individuales. Como todo empaquetamiento fraccional de triángulos se puede completar con aristas individuales, \(cp^*(G)=|E(G)|-2\nu_3^*(G)\) en estos grafos. Completar un empaquetamiento entero máximo de triángulos da \(cp(G)\le |E(G)|-2\nu_3(G)\), que junto con la identidad fraccional implica \(\Delta(G)\le2(\nu_3^*(G)-\nu_3(G))\).
+
+\subsubsection{\texorpdfstring{Corolario 7.2 (empaquetamientos mixtos de triángulos y \(K_4\))}{Corolario 7.2 (empaquetamientos mixtos de triángulos y K\_4)}}\label{corolario-7.2-empaquetamientos-mixtos-de-triuxe1ngulos-y-k_4}
+
+En los mismos grafos, la diferencia entre las ganancias fraccional y entera del empaquetamiento mixto es al menos \(\Delta(G)\). Denotemos por \(W_4^*(G)\) y \(W_4(G)\) las ganancias óptimas fraccional y entera con peso dos por triángulo y cinco por copia de \(K_4\), como en {[}16, §2{]}. Si \(c_4\) y \(c_4^*\) restringen las particiones en cliques a órdenes de dos a cuatro, completar con aristas individuales da \(W_4^*-W_4=c_4-c_4^*\). El óptimo fraccional anterior usa únicamente aristas y triángulos, de modo que \(c_4^*(G)=cp^*(G)\). Como \(c_4(G)\ge cp(G)\), se deduce la desigualdad afirmada. En particular, el gap de ganancia mixta no admite una cota lineal universal para grafos cordales, ni siquiera en los grafos split del teorema 1.4.
+
+Para la construcción económica original de hosts, antes de ampliar las vecindades o de rellenar, sean \(t=|T|\) y \(\tau=|A|t\). Los triángulos fraccionales locales tienen peso total \(18\tau\). Solo utilizan aristas de \(B\), por lo que cada uno de los \(\binom{15t}{2}-54\tau\) pares restantes del núcleo queda disponible para un triángulo de host de peso uno. Así se obtiene
+\[\nu_3^*(G)=\binom{15t}{2}-36\tau,\qquad
+cp^*(G)=\nu_3^*(G)+15t=\frac{225t^2+15t}{2}-36\tau.\]
+
+Para contar las piezas de una sola arista, observemos que, para etiquetas de color y rol distintas, los pares asignados a un host emparejan todos los vértices de su vecindad. Para una etiqueta repetida, la involución \(y\mapsto2c-y\) tiene un único punto fijo, \(y=c\). Queda así una arista de host sin usar en cada uno de los \(15t\) hosts de etiqueta repetida. Todas las demás aristas quedan cubiertas fraccionalmente por triángulos. La optimalidad se deduce del lema 2.1 y de la identidad fraccional del corolario 7.1.
+
+El teorema 1.4 da un gap casi cuadrático con conectividad por vértices al menos \(\lceil n/5\rceil\). Queda por determinar cómo depende el gap máximo de una exigencia de conectividad mayor. Incluso para grafos split conexos se desconoce la tasa de decaimiento de \(\Gamma(n)/n^2\). En particular, está abierto si existe una constante absoluta \(b>0\) tal que \(\Gamma(n)\le n^2\exp(-b\sqrt{\log n})\) para todo \(n\) suficientemente grande.
+
+\subsection{Apéndice A. Precios de las aristas en la obstrucción local}\label{apuxe9ndice-a.-precios-de-las-aristas-en-la-obstrucciuxf3n-local}
+
+Numeramos los vértices de las tres partes consecutivamente del 0 al 14, según el orden de roles de la sección 3. La tabla recoge todos los precios no nulos. Se obtuvieron minimizando la suma de sus valores absolutos bajo 36 ecuaciones que fijan en cero el precio de los triángulos del soporte y nueve desigualdades que exigen precio al menos uno. La reconstrucción racional y la eliminación de denominadores dan el certificado entero de la tabla. Para verificarlo basta sumar los precios de las tres aristas de cada triángulo restante.
+
+\begin{center}
+\begin{tabular}{cccc}
+\toprule
+Arista & Precio & Arista & Precio \\
+\midrule
+0,7 & 3 & 4,11 & $-$1 \\
+0,13 & $-$1 & 4,14 & 2 \\
+0,14 & $-$1 & 5,10 & $-$1 \\
+1,10 & 1 & 5,14 & 1 \\
+2,9 & 1 & 6,10 & $-$1 \\
+2,13 & $-$1 & 6,13 & 1 \\
+2,14 & $-$1 & 7,13 & $-$2 \\
+3,5 & 1 & 7,14 & $-$2 \\
+3,8 & $-$2 & 8,12 & 2 \\
+3,9 & $-$1 & 9,11 & 2 \\
+3,11 & $-$1 & 9,12 & 1 \\
+3,13 & 2 &  &  \\
+4,6 & 1 &  &  \\
+4,8 & $-$2 &  &  \\
+4,9 & $-$1 &  &  \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+A continuación se exhibe un empaquetamiento entero de tamaño 16. Cada terna indica los roles en el orden de las partes. Dos ternas distintas nunca coinciden en dos coordenadas.
+\[\begin{gathered}
+(0,0,4),\ (0,1,2),\ (0,2,3),\ (1,0,0)\\
+(1,1,3),\ (1,3,4),\ (1,4,2),\ (2,0,1)\\
+(2,4,3),\ (3,0,2),\ (3,2,0),\ (3,3,3)\\
+(3,4,1),\ (4,1,0),\ (4,3,2),\ (4,4,4)
+\end{gathered}\]
+
+\subsection{Agradecimientos}\label{agradecimientos}
+
+El autor agradece profundamente a su esposa María Paz y a sus hijos Lucas, Juan Cristóbal, Francisca, Raimundo y Benjamín por su amor, paciencia y apoyo.
+
+\subsection{Uso de inteligencia artificial y herramientas computacionales}\label{uso-de-inteligencia-artificial-y-herramientas-computacionales}
+
+Se utilizaron Claude, de Anthropic, y ChatGPT/Codex, de OpenAI, para explorar y comprobar argumentos y preparar el manuscrito.
+
+Se utilizó Certo {[}13{]} para explorar instancias finitas, comprobar identidades y evaluar construcciones candidatas. Estos cálculos orientaron el desarrollo de los argumentos. Las comprobaciones finitas no se utilizaron como demostraciones de enunciados universales.
+
+El autor asume la responsabilidad de los argumentos, las citas, el código y la presentación. Ningún sistema de IA figura como autor.
+
+\subsection{Referencias}\label{referencias}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  J. P. Traverso Gianini, \emph{Linear-Error Clique Partitions of Split Graphs via Structured Triangle Packing}, Paper III, v1.6. \href{https://github.com/jtraverso/erdos-81-chordal-clique-partitions/tree/3cbd90eed41af7e86ac6f1f4b8c796e20a5e661f/preprints/PAPER_III}{Preprint}.
+\item
+  J. Balogh, J. He, R. A. Krueger, T. Nguyen and M. C. Wigal, \emph{Clique Covers and Decompositions of Cliques of Graphs}, Advances in Combinatorics (2026), article 9. \href{https://doi.org/10.19086/aic/2026.9}{Artículo publicado}.
+\item
+  N. Linial and Z. Luria, \emph{On the vertices of the d-dimensional Birkhoff polytope}, Discrete \& Computational Geometry (2014). \href{https://doi.org/10.1007/s00454-013-9554-5}{Artículo publicado}.
+\item
+  C. Elsholtz, Z. Hunter, L. Proske and L. Sauermann, \emph{Improving Behrend's construction: Sets without arithmetic progressions in integers and over finite fields}, arXiv:2406.12290v1 (2024), Proposition 2.2 and Definition 4.1. \href{https://arxiv.org/html/2406.12290v1}{Preprint}.
+\item
+  J. P. Traverso Gianini, \emph{Colorability and Realizability Defects in Resource-Dominated Packing Relaxations}, Paper V, v1.0. \href{https://github.com/jtraverso/erdos-81-chordal-clique-partitions/tree/3cbd90eed41af7e86ac6f1f4b8c796e20a5e661f/preprints/PAPER_V}{Preprint}.
+\item
+  R. Yuster, \emph{Integer and fractional packing of families of graphs}, Random Structures \& Algorithms 26 (2005), 110--118. \href{https://math.haifa.ac.il/raphy/papers/fracpack.pdf}{Versión del autor}.
+\item
+  P. E. Haxell and V. Rödl, \emph{Integer and fractional packings in dense graphs}, Combinatorica 21 (2001), 13--38. \href{https://doi.org/10.1007/s004930170003}{Artículo publicado}.
+\item
+  P. Erdős, E. T. Ordman, and Y. Zalcstein, \emph{Clique partitions of chordal graphs}, Combinatorics, Probability and Computing 2 (1993), 409--415. \href{https://doi.org/10.1017/S0963548300000808}{Artículo publicado}.
+\item
+  G.-T. Chen, P. Erdős, and E. T. Ordman, \emph{Clique partitions of split graphs}, in \emph{Combinatorics, Graph Theory, Algorithms and Applications} (Beijing, 1993), World Scientific, 1994, 21--30. \href{https://ordman.net/MathResearch/CEOClique_Parts.pdf}{Copia del autor}.
+\item
+  O. Okechukwu, \emph{Clique partitions and bounded simplicial defect}, preprint (2026). \href{https://arxiv.org/abs/2609.20871}{arXiv:2609.20871}.
+\item
+  P. Erdős, P. Frankl, and V. Rödl, \emph{The asymptotic number of graphs not containing a fixed subgraph and a problem for hypergraphs having no exponent}, Graphs and Combinatorics 2 (1986), 113--121. \href{https://doi.org/10.1007/BF01788085}{Artículo publicado}.
+\item
+  D. Mubayi and J. Verstraëte, \emph{Erdős--Rogers functions for arbitrary pairs of graphs}. \href{https://doi.org/10.1002/rsa.70078}{Artículo publicado}.
+\item
+  J. P. Traverso Gianini, \emph{Certo}. Software. \href{https://github.com/jtraverso/certo-math}{Repositorio}.
+\item
+  J. P. Traverso Gianini, \emph{Affine Profile Reduction for Fractional Triangle Packings in Split Graphs}, Paper I, v1.4. \href{https://github.com/jtraverso/erdos-81-chordal-clique-partitions/blob/main/preprints/PAPER_I/README.md}{Preprint}.
+\item
+  J. P. Traverso Gianini, \emph{Complete-Split Extremizers for a Fractional Triangle-Cover Functional on Chordal Graphs}, Paper II, v1.3. \href{https://github.com/jtraverso/erdos-81-chordal-clique-partitions/blob/main/preprints/PAPER_II/README.md}{Preprint}.
+\item
+  J. P. Traverso Gianini, \emph{Particiones de cliques en grafos cordales: redondeo mixto y construcción del régimen crítico}, Paper IV, v0.8 (en español). \href{https://github.com/jtraverso/erdos-81-chordal-clique-partitions/blob/f783a792404a60983a7ef754d055fbe6c341188b/preprints/PAPER_IV/01_manuscript/PAPER_IV_preprint_v0.8_es.md}{Versión citada}.
+\end{enumerate}
+
+\end{document}

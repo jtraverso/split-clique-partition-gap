@@ -1,0 +1,19 @@
+python -B audit/check_robust_witness.py
+{
+  "dimension": 1,
+  "modulus": 3,
+  "support_per_factor": 1,
+  "exterior_classes": 8,
+  "order": 4620,
+  "core_order": 135,
+  "installed_order": 4617,
+  "padding_hosts": 3,
+  "certified_cut_bound": 9,
+  "edges": 64962,
+  "residual_blocks": 9,
+  "gap_lower_bound": "2",
+  "residual_edges": 486,
+  "assigned_pairs": 8559,
+  "verified_vertex_connectivity": 9,
+  "edge_list_sha256": "08e3927973536c64bcc5449732ea1c124c889ef65123bbe50e3353cdccf1c8b7"
+}

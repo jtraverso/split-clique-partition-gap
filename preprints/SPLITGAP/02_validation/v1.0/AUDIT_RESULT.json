@@ -1,0 +1,46 @@
+{
+  "edition": "1.0",
+  "technical_audit": "PASS",
+  "editorial_verdict": "EDITORIALLY_READY",
+  "languages": [
+    "en",
+    "es"
+  ],
+  "proof_revision": "14924a655e7f384cf03958730743e801a35d0b5f",
+  "theorem_declarations": 1347,
+  "distinct_theorem_names": 1346,
+  "source_theorem_and_lemma_declarations_matched": 438,
+  "named_axiom_queries": 24,
+  "axiom_scope": "Theorem declarations in the 68 project proof modules of SplitGap, including private and generated lemmas. One generated name occurs in two modules. The source archive includes the exhaustive checker.",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "finite_certificates": "PASS",
+  "bilingual_typesetting_and_parity": "PASS",
+  "artifacts": {
+    "LICENSE.md": "338c133cbeca4a3da6b4838bff0aaf7dbda4f630cf23c289c5534e35fea7b951",
+    "README.md": "f9de99eb8400b8b69411146b71ebcba0a35fc714f729ac4a6da812d6e1e31cce",
+    "01_manuscript/split-gap-en.md": "646087ad588dc4da73f709025ef3e7c2e9bc4bb7ef56e06f8ce7985a21d8645b",
+    "01_manuscript/split-gap-en.pdf": "75bd2211f45887ed1b3112115266979d6ecb290510e12339ad1698c659c0b01e",
+    "01_manuscript/split-gap-en.tex": "ea4338de50492877e7b23fcf865b2ccaf94fc8687a7ffa375ffc048e6e22a950",
+    "01_manuscript/split-gap-es.md": "93f50621a45236fa7336392776e493e22f731cdaff25f68b19671f8eb078dcec",
+    "01_manuscript/split-gap-es.pdf": "9c67cf290ed3b44aa83eddd52b9a82e540ff0a84a6d7508ecbfce0d0a274bcbb",
+    "01_manuscript/split-gap-es.tex": "35edbd7313b4023f6422dd1e5bcbb9d9d1e31dd23c2aca709593eef70365c507",
+    "03_reproducibility/preamble.tex": "bcffef050416ca3339520a9b12594e73c4cac67a3b912ad6717df9d35ee183f5",
+    "03_reproducibility/README.md": "3557fa8308b7a06c0d55e866b04aa24ed0e6d7215860110aa72ff73e680cab24",
+    "05_formalization/companion-en.md": "76a7996a6c1ceddd3dbc7facc30d9459968fcadc075807887066b7a66f699a5a",
+    "05_formalization/companion-en.pdf": "092bc80a3d86f9afcd2721fffc39e38feabab5b7842a1c7dbde4f8167a92e594",
+    "05_formalization/companion-en.tex": "322a73d78a7c1c8f25cf90db885f4c90de3b291ac4354831d49390f55d0a052e",
+    "05_formalization/companion-es.md": "ac82f4ce83bad69d1add5e54f51f397615ab97221f64312094111eaca56bedf6",
+    "05_formalization/companion-es.pdf": "6f58695b3e8ddae43399ed2f50cae989430c7012ae658d950434705d03f5ea5c",
+    "05_formalization/companion-es.tex": "03794183ad838f41d3275366d8b2fc6d906a5e812379a3005314732d060aa742",
+    "05_formalization/split-gap-lean-v1.0.zip": "99b817230be0cfad9147a6e47cd232080aa96ce7b18076d1454ce1dbee6bf811",
+    "01_manuscript/figures/host-fiber.tex": "55366e161d1ecc90a78e2f6f7a6aafd924e5756dff67b64832eeb66abfad9650",
+    "01_manuscript/figures/odd-cycle.tex": "c0394464b348e5523e14fd50fc8a5685050d7d9e55719a8f8d36f566c7d73a00",
+    "01_manuscript/figures/signed-triangle.tex": "3d8278f6e47fe13c000c5b015c2d69410d5ec52ee7805a76fb051de033b7ca51",
+    "02_validation/v1.0/BILINGUAL_QA.json": "bf15c52846ce84529b430b6869b7a1194160478cef3864a173d5a95f912c3ee2",
+    "02_validation/v1.0/lean/all-theorems.tsv": "f7a5fc94d19692006779487c85193cd368bb1f8fbe628c3da6c95e44c7a978a3"
+  }
+}

@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the preprint."
+title: "Lean formalization of nearly quadratic additive gaps for split graphs"
+type: software
+authors:
+  - family-names: Traverso Gianini
+    given-names: Juan Pablo
+    orcid: https://orcid.org/0009-0003-6068-4096
+version: "1.0"
+repository-code: https://github.com/jtraverso/split-clique-partition-gap
+preferred-citation:
+  type: article
+  title: "Nearly Quadratic Additive Gaps for Edge-Clique Partitions of Split Graphs"
+  authors:
+    - family-names: Traverso Gianini
+      given-names: Juan Pablo
+      orcid: https://orcid.org/0009-0003-6068-4096
+  year: 2026
+  version: "1.0"
+  url: https://github.com/jtraverso/split-clique-partition-gap/tree/main/preprints/SPLITGAP

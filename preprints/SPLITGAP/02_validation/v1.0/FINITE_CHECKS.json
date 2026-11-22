@@ -1,0 +1,17 @@
+{
+  "local-packing": {
+    "status": "PASS",
+    "command": "python -B audit/check_local_packing.py",
+    "log": "local-packing.log"
+  },
+  "host-compression": {
+    "status": "PASS",
+    "command": "python -B audit/host-compression/check.py",
+    "log": "host-compression.log"
+  },
+  "robust-witness": {
+    "status": "PASS",
+    "command": "python -B audit/check_robust_witness.py",
+    "log": "robust-witness.log"
+  }
+}

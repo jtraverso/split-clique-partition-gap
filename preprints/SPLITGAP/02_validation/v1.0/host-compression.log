@@ -1,0 +1,29 @@
+python -B audit/host-compression/check.py
+{
+  "five": {
+    "hosts": 525,
+    "exterior_pairs": 2268,
+    "palette_pairs_tested": 21028,
+    "perfect_groups_without_a_safe_role": 2
+  },
+  "four": {
+    "hosts": 420,
+    "exterior_pairs": 2268,
+    "palette_pairs_tested": 25508,
+    "perfect_groups_without_a_safe_role": 7
+  },
+  "universal": [
+    {
+      "universal_vertices": 35,
+      "old_vertices_per_part": 35,
+      "used_matchings": 140,
+      "new_pairs": 4270
+    },
+    {
+      "universal_vertices": 40,
+      "old_vertices_per_part": 35,
+      "used_matchings": 155,
+      "new_pairs": 4980
+    }
+  ]
+}

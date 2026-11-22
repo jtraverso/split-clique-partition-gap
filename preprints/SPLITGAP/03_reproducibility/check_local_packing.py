@@ -28,7 +28,7 @@ def fits(cells, choices, index, used, needed):
     return fits(cells, choices, index + 1, used, needed)
 
 
-manuscript = Path(__file__).resolve().parents[1] / "preprints/SPLITGAP/01_manuscript/split-gap-en.md"
+manuscript = Path(__file__).resolve().parents[1] / "01_manuscript/split-gap-en.md"
 text = manuscript.read_text(encoding="utf-8")
 deleted = displayed_triples(text, "Delete the edges of the seven triangles")
 witness = displayed_triples(text, "An integral packing of size 16 is given below")

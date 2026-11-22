@@ -58,8 +58,8 @@ def tex_source(md, pandoc):
         prefix = REPOSITORY + "/blob/main/preprints/SPLITGAP/"
         body = re.sub(r"\]\(\.\./((?:01_manuscript|02_validation|03_reproducibility)/[^)]+)\)",
                       lambda m: "](" + prefix + m[1] + ")", body)
-        body = body.replace("](split-gap-lean-v1.0.zip)",
-                            "](" + prefix + "05_formalization/split-gap-lean-v1.0.zip)")
+        body = re.sub(r"\]\((split-gap-lean-v1\.0\.zip|LICENSE-Apache-2\.0\.txt)\)",
+                      lambda m: "](" + prefix + "05_formalization/" + m[1] + ")", body)
     body = body.replace("#### ", "### ")
     body = subprocess.run(
         [pandoc, "-f", "markdown+raw_tex+tex_math_dollars", "-t", "latex", "--wrap=none", "--syntax-highlighting=none"],

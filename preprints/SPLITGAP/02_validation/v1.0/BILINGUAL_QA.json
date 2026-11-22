@@ -20,17 +20,17 @@
     },
     "companion-en": {
       "pages": 4,
-      "md": "76a7996a6c1ceddd3dbc7facc30d9459968fcadc075807887066b7a66f699a5a",
-      "tex": "322a73d78a7c1c8f25cf90db885f4c90de3b291ac4354831d49390f55d0a052e",
-      "pdf": "092bc80a3d86f9afcd2721fffc39e38feabab5b7842a1c7dbde4f8167a92e594",
+      "md": "9fd2745ac3a44f84b56b377a88a8907a20d9d3d2f82d334c558e5a235e2d4236",
+      "tex": "94185f0be07b84592ad9f5aef71df05bd0c4a0bbd6775a5af0e12b95506a560f",
+      "pdf": "532f8f8df159c6c3e8e8f7f66879dfb431f3ad2a70cb0094184a1c330b7aad9a",
       "cover_pdf_link": "PASS",
       "visual_review": "PASS"
     },
     "companion-es": {
       "pages": 5,
-      "md": "ac82f4ce83bad69d1add5e54f51f397615ab97221f64312094111eaca56bedf6",
-      "tex": "03794183ad838f41d3275366d8b2fc6d906a5e812379a3005314732d060aa742",
-      "pdf": "6f58695b3e8ddae43399ed2f50cae989430c7012ae658d950434705d03f5ea5c",
+      "md": "71482b46500cc7551e554ed6d41a5f914d5ae23b095ba1b302730d203b47f3df",
+      "tex": "95c0ea16f3cdc8dc01780f3a68b388673fe876d9b7e6cc9fe9173cf11bf44ac9",
+      "pdf": "ce1ca9e4e4815826b9a6b10eb027809def9e5f04d634386e94290e380c9903e2",
       "cover_pdf_link": "PASS",
       "visual_review": "PASS"
     }

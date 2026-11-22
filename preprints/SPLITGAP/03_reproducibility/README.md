@@ -25,12 +25,12 @@ The dependency revisions are fixed in `lake-manifest.json`. The root `SplitGap` 
 
 ## Finite certificates
 
-From a checkout of the official repository, run:
+From the edition directory, run:
 
 ```sh
-python -B audit/check_local_packing.py
-python -B audit/host-compression/check.py
-python -B audit/check_robust_witness.py
+python -B 03_reproducibility/check_local_packing.py
+python -B 03_reproducibility/check_host_compression.py
+python -B 03_reproducibility/check_robust_witness.py
 ```
 
 The three programs check the local packing optimum, the finite host-matching constructions, and the explicit witness described in the companion. Their output is recorded in the [finite-check log index](../02_validation/v1.0/FINITE_CHECKS.json).

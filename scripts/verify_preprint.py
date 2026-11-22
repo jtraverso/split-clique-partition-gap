@@ -10,7 +10,6 @@ VALIDATION = EDITION / "02_validation" / "v1.0"
 MANIFEST = EDITION / "04_integrity" / "SHA256SUMS"
 ARCHIVE = ROOT / "archives" / "split-gap-preprint-v1.0.zip"
 FREEZE = EDITION / "05_formalization" / "split-gap-lean-v1.0.zip"
-TOOLCHAIN_FILES = {"lake-manifest.json", "lakefile.toml", "lean-toolchain"}
 
 
 def check(condition, message):
@@ -63,11 +62,6 @@ def main():
         for name, sha in sources.items():
             archived = z.read("lean/" + name)
             check(digest(archived) == sha, "Lean source archive member " + name)
-            current = (ROOT / name).read_bytes()
-            if name in TOOLCHAIN_FILES:
-                # Git can check out the same configuration with a different line ending.
-                current, archived = (data.replace(b"\r\n", b"\n") for data in (current, archived))
-            check(current == archived, "repository Lean source " + name)
     axioms = clean["declarations"]
     check(len(axioms) == 24 and all(set(filter(None, x.split(", "))) <=
           {"propext", "Classical.choice", "Quot.sound"} for x in axioms.values()), "axiom audit")

@@ -1,4 +1,4 @@
-python -B audit/check_robust_witness.py
+python -B 03_reproducibility/check_robust_witness.py
 {
   "dimension": 1,
   "modulus": 3,

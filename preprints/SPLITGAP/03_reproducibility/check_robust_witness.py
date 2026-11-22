@@ -9,7 +9,7 @@ import sys
 from tempfile import TemporaryDirectory
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parent
 ORDER = 4620
 M = 3
 T = M*M
@@ -102,7 +102,7 @@ assert min(map(len,host_neighbors)) == T
 tau = T*len(support)
 data.update(residual_blocks=tau, gap_lower_bound=str(Fraction(2*tau,9)), residual_edges=len(residual), assigned_pairs=CORE*(CORE-1)//2-len(residual),
             verified_vertex_connectivity=T, edge_list_sha256=digest)
-expected = json.loads((ROOT/"audit/robust-example.json").read_text(encoding="utf-8"))
+expected = json.loads((ROOT/"robust-example.json").read_text(encoding="utf-8"))
 if data != expected:
     raise ValueError("The example differs from its recorded certificate")
 print(json.dumps(data,indent=2))

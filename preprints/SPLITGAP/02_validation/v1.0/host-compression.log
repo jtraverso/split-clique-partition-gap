@@ -1,4 +1,4 @@
-python -B audit/host-compression/check.py
+python -B 03_reproducibility/check_host_compression.py
 {
   "five": {
     "hosts": 525,

@@ -8,12 +8,13 @@ namespace SplitGapIIIRegistry
 open Finset MeasureTheory ProbabilityTheory GapExtremal SplitGapIII Filter
 open scoped BigOperators ENNReal Topology
 
-variable {Ω E V H : Type*} [Fintype V] [DecidableEq V] [Fintype H] [DecidableEq H]
+variable {Ω E V H : Type*}
 
 /-- When a complete assignment exists before deletion, sufficient surviving lists
 bound the probability that the original gap changes. The rule that turns these
 lists into an assignment is an explicit hypothesis. -/
 theorem failure_probability_after_crossing_deletions
+    [Fintype V] [DecidableEq V] [Fintype H] [DecidableEq H]
     [MeasurableSpace Ω] (μ : Measure Ω) [IsProbabilityMeasure μ]
     (B : SimpleGraph V) [DecidableRel B.Adj] (N : H → Finset V)
     (independent : ∀ h, ∀ a ∈ N h, ∀ b ∈ N h, ¬ B.Adj a b)
@@ -37,6 +38,7 @@ theorem failure_probability_after_crossing_deletions
 /-- A proper bipartite midpoint labeling gives a surviving host assignment
 whenever each physical list has at least the number of available labels. -/
 theorem recover_bipartite_physical_lists
+    [Fintype V] [DecidableEq V]
     {S : Type*} [Fintype S] (N : H → Finset V) (J : Finset (Finset V))
     (left right : J → V) (midpoint : J → S)
     (ends : ∀ e, e.val = {left e, right e})

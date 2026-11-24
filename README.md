@@ -1,33 +1,27 @@
-# Nearly Quadratic Additive Gaps for Edge-Clique Partitions of Split Graphs
+# Clique partition gaps in split graphs
 
-Juan Pablo Traverso Gianini · Preprint 1.0
+Juan Pablo Traverso Gianini · Papers I–III · Preprints 1.0
 
-[Read the preprint on alphaXiv](https://www.alphaxiv.org/abs/2611.edge-clique-partition-split-graphs)
+[Series website](https://jtraverso.github.io/split-clique-partition-gap/) · [Sitio en español](https://jtraverso.github.io/split-clique-partition-gap/es/)
 
-[Reserved Zenodo record](https://zenodo.org/records/24408988) · [Reserved DOI 10.5281/zenodo.24408988](https://doi.org/10.5281/zenodo.24408988)
+Paper I constructs nearly quadratic gaps between integral and fractional edge-clique partitions. Paper II measures the stability of the gap under crossing-edge deletions. Paper III reconstructs a host-triangle decomposition after random deletions and controls statistics in the same assignment.
 
-| Edition | Markdown | LaTeX | PDF |
-|---|---|---|---|
-| English manuscript | [MD](preprints/SPLITGAP/01_manuscript/split-gap-en.md) | [TEX](preprints/SPLITGAP/01_manuscript/split-gap-en.tex) | [PDF](preprints/SPLITGAP/01_manuscript/split-gap-en.pdf) |
-| Manuscrito en español | [MD](preprints/SPLITGAP/01_manuscript/split-gap-es.md) | [TEX](preprints/SPLITGAP/01_manuscript/split-gap-es.tex) | [PDF](preprints/SPLITGAP/01_manuscript/split-gap-es.pdf) |
-| English formalization companion | [MD](preprints/SPLITGAP/05_formalization/companion-en.md) | [TEX](preprints/SPLITGAP/05_formalization/companion-en.tex) | [PDF](preprints/SPLITGAP/05_formalization/companion-en.pdf) |
-| Guía de la formalización en español | [MD](preprints/SPLITGAP/05_formalization/companion-es.md) | [TEX](preprints/SPLITGAP/05_formalization/companion-es.tex) | [PDF](preprints/SPLITGAP/05_formalization/companion-es.pdf) |
+El Artículo I construye brechas casi cuadráticas entre los números entero y fraccionario de partición de aristas en cliques. El Artículo II cuantifica la estabilidad de la brecha ante borrados de aristas cruzadas. El Artículo III reconstruye una descomposición en triángulos con anfitrión tras borrados aleatorios y controla estadísticas en la misma asignación.
 
-[Lean source freeze](preprints/SPLITGAP/05_formalization/split-gap-lean-v1.0.zip) · [Axioms by theorem](preprints/SPLITGAP/02_validation/v1.0/lean/all-theorems.tsv) · [Reproduction](preprints/SPLITGAP/03_reproducibility/README.md) · [Audit](preprints/SPLITGAP/02_validation/v1.0/AUDIT_RESULT.json)
+## Read the series / Leer la serie
 
-[Download the complete preprint package](archives/split-gap-preprint-v1.0.zip) · [SHA-256](archives/split-gap-preprint-v1.0.zip.sha256)
+| Paper / Artículo | Manuscripts / Manuscritos | Preprint and sources / Preprint y fuentes |
+|---|---|---|
+| **I. [Nearly Quadratic Additive Gaps for Edge-Clique Partitions of Split Graphs](https://github.com/jtraverso/split-clique-partition-gap/tree/main/preprints/SPLITGAP)** | [English PDF](https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap/main/preprints/SPLITGAP/01_manuscript/split-gap-en.pdf) · [PDF en español](https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap/main/preprints/SPLITGAP/01_manuscript/split-gap-es.pdf) | [alphaXiv](https://www.alphaxiv.org/abs/2611.edge-clique-partition-split-graphs) · [Complete ZIP](https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap/main/archives/split-gap-preprint-v1.0.zip) |
+| **II. [Stability of the Clique Partition Gap in Split Graphs](https://github.com/jtraverso/split-clique-partition-gap-ii/releases/tag/v1.0)** | [English PDF](https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap-ii/3c2da989f57fbc8d51db0621bda00d279a0e3b91/preprints/SPLITGAPII/01_manuscript/split-gap-ii-en.pdf) · [PDF en español](https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap-ii/3c2da989f57fbc8d51db0621bda00d279a0e3b91/preprints/SPLITGAPII/01_manuscript/split-gap-ii-es.pdf) | [alphaXiv](https://www.alphaxiv.org/abs/2611.clique-partition-gap-split-graphs) · [Complete ZIP](https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap-ii/3c2da989f57fbc8d51db0621bda00d279a0e3b91/archives/split-gap-ii-preprint-v1.0.zip) |
+| **III. [Recovering Host-Triangle Decompositions after Random Deletions in Split Graphs](https://github.com/jtraverso/split-clique-partition-gap/releases/tag/split-gap-iii-preprint-1.0)** | [English PDF](https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap/main/preprints/SPLITGAPIII/01_manuscript/split-gap-iii-en.pdf) · [PDF en español](https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap/main/preprints/SPLITGAPIII/01_manuscript/split-gap-iii-es.pdf) | [alphaXiv](https://www.alphaxiv.org/abs/2611.host-triangle-decompositions-random-deletions) · [Complete ZIP](https://github.com/jtraverso/split-clique-partition-gap/releases/download/split-gap-iii-preprint-1.0/split-gap-iii-preprint-v1.0.zip) |
 
-The Lean project is included in the source freeze. Unzip it and run Lake from the `lean/` directory. The formalization companion links to the individual files at the commit checked by Palomar.
+## Formalization and reproducibility / Formalización y reproducibilidad
 
-## Part III · Recovering Host-Triangle Decompositions after Random Deletions in Split Graphs
+| Paper | Companion / Guía | Lean | Audit / Auditoría | Palomar |
+|---|---|---|---|---|
+| I | [EN](https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap/main/preprints/SPLITGAP/05_formalization/companion-en.pdf) · [ES](https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap/main/preprints/SPLITGAP/05_formalization/companion-es.pdf) | [Source freeze](https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap/main/preprints/SPLITGAP/05_formalization/split-gap-lean-v1.0.zip) | [Report](https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap/main/preprints/SPLITGAP/02_validation/v1.0/AUDIT_RESULT.json) | [PALOMAR-2026-11-22-000012](https://palomar-registry.org/entry.html?id=PALOMAR-2026-11-22-000012&version=1) |
+| II | [EN](https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap-ii/3c2da989f57fbc8d51db0621bda00d279a0e3b91/preprints/SPLITGAPII/05_formalization/companion-en.pdf) · [ES](https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap-ii/3c2da989f57fbc8d51db0621bda00d279a0e3b91/preprints/SPLITGAPII/05_formalization/companion-es.pdf) | [Source freeze](https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap-ii/3c2da989f57fbc8d51db0621bda00d279a0e3b91/preprints/SPLITGAPII/05_formalization/split-gap-ii-lean-v1.0.zip) | [Report](https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap-ii/3c2da989f57fbc8d51db0621bda00d279a0e3b91/preprints/SPLITGAPII/02_validation/v1.0/AUDIT_RESULT.json) | [PALOMAR-2026-11-23-000028](https://palomar-registry.org/entry.html?id=PALOMAR-2026-11-23-000028&version=1) |
+| III | [EN](https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap/main/preprints/SPLITGAPIII/05_formalization/companion-en.pdf) · [ES](https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap/main/preprints/SPLITGAPIII/05_formalization/companion-es.pdf) | [Source freeze](https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap/main/preprints/SPLITGAPIII/05_formalization/split-gap-iii-lean-v0.4.zip) | [Report](https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap/main/preprints/SPLITGAPIII/02_validation/v1.0/EDITORIAL_AUDIT.md) | [Comparison project](formalization/SplitGapIII) |
 
-Juan Pablo Traverso Gianini · Preprint 1.0
-
-[Read the preprint on alphaXiv](https://www.alphaxiv.org/abs/2611.host-triangle-decompositions-random-deletions)
-
-| Edition | Markdown | LaTeX | PDF |
-|---|---|---|---|
-| English manuscript | [MD](preprints/SPLITGAPIII/01_manuscript/split-gap-iii-en.md) | [TeX](preprints/SPLITGAPIII/01_manuscript/split-gap-iii-en.tex) | [PDF](preprints/SPLITGAPIII/01_manuscript/split-gap-iii-en.pdf) |
-| Manuscrito en español | [MD](preprints/SPLITGAPIII/01_manuscript/split-gap-iii-es.md) | [TeX](preprints/SPLITGAPIII/01_manuscript/split-gap-iii-es.tex) | [PDF](preprints/SPLITGAPIII/01_manuscript/split-gap-iii-es.pdf) |
-
-[Edition index](preprints/SPLITGAPIII/README.md) · [Lean source freeze](preprints/SPLITGAPIII/05_formalization/split-gap-iii-lean-v0.4.zip) · [Audit](preprints/SPLITGAPIII/02_validation/v1.0/EDITORIAL_AUDIT.md) · [Complete preprint package](archives/split-gap-iii-preprint-v1.0.zip) · [SHA-256](archives/split-gap-iii-preprint-v1.0.zip.sha256)
+Each guide describes the scope of the Lean formalization and how to reproduce its checks. The Part II edition and its sources are maintained in the [companion repository](https://github.com/jtraverso/split-clique-partition-gap-ii).

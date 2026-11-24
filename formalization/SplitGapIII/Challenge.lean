@@ -82,7 +82,7 @@ def hostGraph (N : H → Finset V) : SimpleGraph (V ⊕ H) where
 end GapExtremal
 
 namespace SplitGapIIIRegistry
-open Finset MeasureTheory ProbabilityTheory GapExtremal SplitGapIII Filter
+open Finset MeasureTheory ProbabilityTheory GapExtremal Filter
 open scoped BigOperators ENNReal Topology
 
 /-- A proper host assignment uses present crossing edges and never reuses one. -/

@@ -5,7 +5,7 @@ public import SplitGapIII.RecoveryProbability
 @[expose] public section
 
 namespace SplitGapIIIRegistry
-open Finset MeasureTheory ProbabilityTheory GapExtremal SplitGapIII Filter
+open Finset MeasureTheory ProbabilityTheory GapExtremal Filter
 open scoped BigOperators ENNReal Topology
 
 /-- A proper host assignment uses present crossing edges and never reuses one. -/
@@ -43,8 +43,8 @@ theorem failure_probability_after_crossing_deletions
     μ.real {ω | gap (hostGraph (live ω)) ≠ gap (hostGraph N)} ≤
       ∑ e ∈ tests, (Real.exp (-t * a) * (1 - p.toReal ^ 2 + p.toReal ^ 2 * Real.exp t)) ^
         (available e).card := by
-  rw [gap_of_complete_recovery B N independent initial hinitial]
-  exact probability_gap_deviation B N independent keep hkeep hcoin p hp tests
+  rw [SplitGapIII.gap_of_complete_recovery B N independent initial hinitial]
+  exact SplitGapIII.probability_gap_deviation B N independent keep hkeep hcoin p hp tests
     left right distinct available a t ht live hlive recover
 
 /-- A proper bipartite midpoint labeling gives a surviving host assignment
@@ -61,7 +61,7 @@ theorem recover_bipartite_physical_lists
     (physical : ∀ e h, h ∈ lists e → e.val ⊆ N h)
     (large : ∀ e, Fintype.card S ≤ (lists e).card) :
     ∃ host : J → H, HasHostAssignment N J host := by
-  exact recover_physical_bipartite_group N J left right midpoint ends sides midpoint_proper
+  exact SplitGapIII.recover_physical_bipartite_group N J left right midpoint ends sides midpoint_proper
     lists physical large
 
 end SplitGapIIIRegistry

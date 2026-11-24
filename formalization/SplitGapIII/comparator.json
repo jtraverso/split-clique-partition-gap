@@ -7,9 +7,7 @@
   ],
   "definition_names": [
     "GapExtremal.hostGraph",
-    "GapExtremal.gap",
-    "SplitGapIII.Assigned",
-    "SplitGapIII.surviving_hosts"
+    "GapExtremal.gap"
   ],
   "permitted_axioms": [
     "propext",

@@ -1,0 +1,57 @@
+\documentclass[english,11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{fontspec}
+\setmainfont{lmroman10-regular.otf}[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]
+\setsansfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf]
+\setmonofont{lmmono10-regular.otf}[Scale=MatchLowercase]
+\newlength{\LeanCharWidth}
+\usepackage{amsmath,amssymb}
+\usepackage[english]{babel}
+\usepackage{microtype,parskip}
+\usepackage{graphicx,float,caption}
+\usepackage{longtable,booktabs,array,calc}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage{hyperref,bookmark}
+\usepackage{etoolbox,needspace}
+\setcounter{secnumdepth}{-\maxdimen}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcounter{none}
+\AtBeginEnvironment{longtable}{\Needspace{8\baselineskip}\small}
+\pretocmd{\section}{\Needspace{5\baselineskip}}{}{}
+\pretocmd{\subsection}{\Needspace{4\baselineskip}}{}{}
+\pretocmd{\subsubsection}{\Needspace{4\baselineskip}}{}{}
+\captionsetup{font=small,labelfont=bf}
+\urlstyle{same}
+\AtBeginDocument{\special{pdf:minorversion 7}}
+
+\hypersetup{pdflang=en-US,colorlinks=true,urlcolor=blue,linkcolor=blue,pdftitle={Proof ledger for Recovering Host-Triangle Decompositions after Random Deletions in Split Graphs},pdfauthor={Juan Pablo Traverso Gianini}}
+\title{Proof ledger for Recovering Host-Triangle Decompositions after Random Deletions in Split Graphs}
+\author{Juan Pablo Traverso Gianini\\\small Independent researcher, Santiago, Chile\\\small\href{mailto:jtraverso@gmail.com}{jtraverso@gmail.com}\quad\href{https://orcid.org/0009-0003-6068-4096}{ORCID 0009-0003-6068-4096}}
+\date{Preprint 1.0 \enspace·\enspace November 24, 2026}
+\begin{document}\raggedbottom\maketitle
+\begin{center}Paper III in the series on clique partition gaps in split graphs.\end{center}
+\noindent DOI \url{https://doi.org/10.5281/zenodo.24494747}\\
+Series repository \url{https://github.com/jtraverso/split-clique-partition-gap}
+\subsection{From the assigned triangles to the gap}\label{from-the-assigned-triangles-to-the-gap}
+
+Write \(J\) for the required pairs and \(B\) for the residual graph on the clique. Each base uses two distinct crossing edges when assigned. A proper assignment uses a given crossing edge at most once. With a complete assignment the two partition costs in (7) have the common term \(|E(G)|-2|J|\). Subtracting the fractional cost from the integral cost gives \(F(B)-I(B)\). Deleting crossing edges changes the common term, but preserves independence of each host neighborhood in \(B\). Assigning all the same bases again therefore gives the same difference. This is the transfer step in Theorem 3.
+
+\subsection{Recovering the four hypotheses on a single support}\label{recovering-the-four-hypotheses-on-a-single-support}
+
+On each side of a bipartite block the factor must carry \(d^2\) units. For a cut whose source side contains \(X\) and the hosts outside \(Y\), the available capacity is \[d(d-|X|)+e(X,Y)+\sum_{h\notin Y}a_h.\] Using \(\sum_h a_h=d^2\) and comparing with \(d^2\) gives (11). The same host degrees on both sides ensure that the selected incidences at each host can be paired. In a clique block the core degrees are \(d-1\) and the host degrees must be even. Appendix B controls all the cuts before the factors are chosen.
+
+The initial triangle weights saturate the selected crossing edges. Their remaining errors lie on bases and have zero vertex margins. The rectangle corrections of §5 preserve the crossing loads. In the clique case the coefficient of \(D_{ij}\) in (12) is obtained by adding the four contributions \[2(d-2)(d-3)+4+2(d-3)+2(d-3)=2(d-1)(d-2).\] Spreading each correction among common hosts keeps every corrected triangle weight positive. The integer argument in §5 supplies H2 separately. Common-neighbor counts after trimming give H3, including pairs without a surviving incidence.
+
+For the crossing-edge hinge, the root triangles are \(uhv\) and \(uhw\). Its seven auxiliary edges are \(ku,kv,kw,kz,vz,wz,hz\). Adding \(uv,hv\) yields \(kuv,hvz,kwz\). Adding \(uw,hw\) instead yields \(kuw,hwz,kvz\). In both partitions the nine edges occur once. The root vertices occur in the support, while the auxiliary edges avoid both root edge sets. The roles of \(k\) and \(z\) can be recovered from the unique auxiliary neighbors of \(u\) and \(h\). This is why the construction counts distinct hinges in H4.
+
+\subsection{Counting on the two scales}\label{counting-on-the-two-scales}
+
+In a four-cycle the two alternating matchings must use distinct hosts. Once one matching is distinguished, there are \(r(r-1)\) choices, each contributing \(r^{-4}\) to the initial target. The multiplier per cycle is therefore \((r-1)/r^3\). The cycle counts are \(\binom d2^2\) in \(K_{d,d}\) and \(3\binom d4\) in \(K_d\). With \(r/d\to1/p\) their contributions divided by \(d^2\) tend respectively to \(p^2/4\) and \(p^2/8\).
+
+The original core has 15 roles. There are \(\binom{15}{2}=105\) pairs of distinct roles and 15 single-role clique types. With \(a=\lfloor j/2\rfloor\), the full late and secondary blocks contribute at most \(108t^2(3/4)^a=o(t^2)\) bases of the restricted types. The retained leading coefficient on bases in the original core is \[105\frac{p^2}{4}+15\frac{p^2}{8}=\frac{225p^2}{8}.\] Each counted Pasch still has two hosts. Lemma 7 assigns its four triangles to a unique block. In the terminal clique \(w/n\to p^2/64\), so its contribution divided by \(n^2\) tends to \((p^2/8)(p^2/64)^2=p^6/32768\).
+
+For a fixed exponent \(q\), the early blocks have side at least \(\sqrt t\), sufficiently large to carry all \(n^q\) tests as a polynomial family in their own order. T+ returns one decomposition per block for the whole family and the Pasch count together. Restricting to owned bases makes their union proper. Summing errors over the original blocks gives (3), and summing over all blocks gives (2) for that same union. The sequence of pools is chosen before the tests and deletions. The final decomposition can depend on both.
+
+\end{document}

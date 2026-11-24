@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="622" height="227" viewBox="0 0 622 227" role="img"><title>A crossing-edge hinge</title><desc>The seven solid edges are identical in both panels. A dashed wedge completes three triangles in each panel.</desc><rect width="622" height="227" fill="white"/>
+<g transform="translate(0,0)">
+<text x="152" y="18" text-anchor="middle" font-family="Georgia,serif" font-size="15">Wedge at v</text>
+<polygon points="101,117 36,117 152,47" fill="#e5f2ed"/>
+<polygon points="268,117 152,47 203,117" fill="#f6ecd8"/>
+<polygon points="101,117 152,187 203,117" fill="#e6edf7"/>
+<line x1="268" y1="117" x2="203" y2="117" stroke="#293944" stroke-width="1.8"/>
+<line x1="101" y1="117" x2="36" y2="117" stroke="#293944" stroke-width="1.8"/>
+<line x1="101" y1="117" x2="152" y2="47" stroke="#293944" stroke-width="1.8"/>
+<line x1="101" y1="117" x2="152" y2="187" stroke="#293944" stroke-width="1.8"/>
+<line x1="101" y1="117" x2="203" y2="117" stroke="#293944" stroke-width="1.8"/>
+<line x1="152" y1="47" x2="203" y2="117" stroke="#293944" stroke-width="1.8"/>
+<line x1="152" y1="187" x2="203" y2="117" stroke="#293944" stroke-width="1.8"/>
+<path d="M 36.00 117.00 L 41.14 113.90 M 44.56 111.83 L 49.70 108.73 M 53.12 106.67 L 58.26 103.57 M 61.69 101.50 L 66.82 98.40 M 70.25 96.33 L 75.38 93.23 M 78.81 91.17 L 83.95 88.07 M 87.37 86.00 L 92.51 82.90 M 95.93 80.83 L 101.07 77.73 M 104.50 75.67 L 109.63 72.57 M 113.06 70.50 L 118.19 67.40 M 121.62 65.33 L 126.76 62.23 M 130.18 60.17 L 135.32 57.07 M 138.74 55.00 L 143.88 51.90 M 147.30 49.83 L 152.00 47.00" stroke="#91532a" stroke-width="2" fill="none"/>
+<path d="M 268.00 117.00 L 262.86 113.90 M 259.44 111.83 L 254.30 108.73 M 250.88 106.67 L 245.74 103.57 M 242.31 101.50 L 237.18 98.40 M 233.75 96.33 L 228.62 93.23 M 225.19 91.17 L 220.05 88.07 M 216.63 86.00 L 211.49 82.90 M 208.07 80.83 L 202.93 77.73 M 199.50 75.67 L 194.37 72.57 M 190.94 70.50 L 185.81 67.40 M 182.38 65.33 L 177.24 62.23 M 173.82 60.17 L 168.68 57.07 M 165.26 55.00 L 160.12 51.90 M 156.70 49.83 L 152.00 47.00" stroke="#91532a" stroke-width="2" fill="none"/>
+<circle cx="36" cy="117" r="3.1" fill="#243744"/><text x="23" y="122" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="16">u</text>
+<circle cx="101" cy="117" r="3.1" fill="#243744"/><text x="99" y="136" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="16">k</text>
+<circle cx="203" cy="117" r="3.1" fill="#243744"/><text x="205" y="136" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="16">z</text>
+<circle cx="268" cy="117" r="3.1" fill="#243744"/><text x="281" y="122" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="16">h</text>
+<circle cx="152" cy="47" r="3.1" fill="#243744"/><text x="152" y="37" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="16">v</text>
+<circle cx="152" cy="187" r="3.1" fill="#243744"/><text x="152" y="207" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="16">w</text>
+</g>
+<g transform="translate(315,0)">
+<text x="152" y="18" text-anchor="middle" font-family="Georgia,serif" font-size="15">Wedge at w</text>
+<polygon points="101,117 36,117 152,187" fill="#e5f2ed"/>
+<polygon points="268,117 152,187 203,117" fill="#f6ecd8"/>
+<polygon points="101,117 152,47 203,117" fill="#e6edf7"/>
+<line x1="268" y1="117" x2="203" y2="117" stroke="#293944" stroke-width="1.8"/>
+<line x1="101" y1="117" x2="36" y2="117" stroke="#293944" stroke-width="1.8"/>
+<line x1="101" y1="117" x2="152" y2="47" stroke="#293944" stroke-width="1.8"/>
+<line x1="101" y1="117" x2="152" y2="187" stroke="#293944" stroke-width="1.8"/>
+<line x1="101" y1="117" x2="203" y2="117" stroke="#293944" stroke-width="1.8"/>
+<line x1="152" y1="47" x2="203" y2="117" stroke="#293944" stroke-width="1.8"/>
+<line x1="152" y1="187" x2="203" y2="117" stroke="#293944" stroke-width="1.8"/>
+<path d="M 36.00 117.00 L 41.14 120.10 M 44.56 122.17 L 49.70 125.27 M 53.12 127.33 L 58.26 130.43 M 61.69 132.50 L 66.82 135.60 M 70.25 137.67 L 75.38 140.77 M 78.81 142.83 L 83.95 145.93 M 87.37 148.00 L 92.51 151.10 M 95.93 153.17 L 101.07 156.27 M 104.50 158.33 L 109.63 161.43 M 113.06 163.50 L 118.19 166.60 M 121.62 168.67 L 126.76 171.77 M 130.18 173.83 L 135.32 176.93 M 138.74 179.00 L 143.88 182.10 M 147.30 184.17 L 152.00 187.00" stroke="#91532a" stroke-width="2" fill="none"/>
+<path d="M 268.00 117.00 L 262.86 120.10 M 259.44 122.17 L 254.30 125.27 M 250.88 127.33 L 245.74 130.43 M 242.31 132.50 L 237.18 135.60 M 233.75 137.67 L 228.62 140.77 M 225.19 142.83 L 220.05 145.93 M 216.63 148.00 L 211.49 151.10 M 208.07 153.17 L 202.93 156.27 M 199.50 158.33 L 194.37 161.43 M 190.94 163.50 L 185.81 166.60 M 182.38 168.67 L 177.24 171.77 M 173.82 173.83 L 168.68 176.93 M 165.26 179.00 L 160.12 182.10 M 156.70 184.17 L 152.00 187.00" stroke="#91532a" stroke-width="2" fill="none"/>
+<circle cx="36" cy="117" r="3.1" fill="#243744"/><text x="23" y="122" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="16">u</text>
+<circle cx="101" cy="117" r="3.1" fill="#243744"/><text x="99" y="136" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="16">k</text>
+<circle cx="203" cy="117" r="3.1" fill="#243744"/><text x="205" y="136" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="16">z</text>
+<circle cx="268" cy="117" r="3.1" fill="#243744"/><text x="281" y="122" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="16">h</text>
+<circle cx="152" cy="47" r="3.1" fill="#243744"/><text x="152" y="37" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="16">v</text>
+<circle cx="152" cy="187" r="3.1" fill="#243744"/><text x="152" y="207" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="16">w</text>
+</g>
+</svg>

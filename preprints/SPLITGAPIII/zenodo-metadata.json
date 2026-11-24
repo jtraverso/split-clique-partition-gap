@@ -1,0 +1,24 @@
+{
+  "title": "Recovering Host-Triangle Decompositions after Random Deletions in Split Graphs",
+  "version": "1.0",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "description": "After independent deletions of core–host incidences, the surviving graph contains a balanced support for a decomposition into host triangles. One assignment controls prescribed linear statistics and Pasch counts on the whole split graph and on triangles with bases in the original geometric core. The construction preserves exactly a nearly quadratic clique-partition gap with high probability.",
+  "creators": [
+    {
+      "name": "Traverso Gianini, Juan Pablo",
+      "orcid": "0009-0003-6068-4096"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.24408988",
+      "relation": "references"
+    },
+    {
+      "identifier": "10.5281/zenodo.24452724",
+      "relation": "references"
+    }
+  ]
+}

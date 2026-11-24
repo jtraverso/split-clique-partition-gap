@@ -14,3 +14,6 @@ preprints/SPLITGAP/**/*.txt text eol=lf
 preprints/SPLITGAP/04_integrity/SHA256SUMS text eol=lf
 
 *.tsv text eol=lf
+
+# Keep the audited Part III edition byte-for-byte intact.
+preprints/SPLITGAPIII/** -text

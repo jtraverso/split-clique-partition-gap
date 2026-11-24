@@ -1,0 +1,13 @@
+{
+  "baseline_commit": "75bad5675ec4b5c2f4be9860a8641b3fbb1ca7e6",
+  "displayed_blocks_unchanged_in_english": 30,
+  "numbered_equations": 13,
+  "acknowledgments_and_ai_clause_unchanged": true,
+  "bibliography_only_change": "DOI added to reference [6]",
+  "editorial_changes": [
+    "definitions moved before prior work",
+    "gap statement scoped to construction",
+    "outdated internal lemma reference corrected",
+    "archived draft wording removed from section 7"
+  ]
+}

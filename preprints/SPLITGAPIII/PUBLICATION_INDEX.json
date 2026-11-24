@@ -1,0 +1,25 @@
+{
+  "title": "Recovering Host-Triangle Decompositions after Random Deletions in Split Graphs",
+  "series": "Clique partition gaps in split graphs",
+  "part": 3,
+  "version": "1.0",
+  "language": "en",
+  "date": "2026-11-24",
+  "doi": "10.5281/zenodo.24494747",
+  "repository": "https://github.com/jtraverso/split-clique-partition-gap",
+  "manuscript": "01_manuscript/split-gap-iii-en.pdf",
+  "formalization": "05_formalization/split-gap-iii-lean-v0.4.zip",
+  "sha256_formalization": "f5e51ff6a95f04688e92e5c291528ba14c689acda765282cde10c5a4c55cba46",
+  "ledger": "06_proof_ledger/ledger-en.pdf",
+  "audit": "02_validation/v1.0/EDITORIAL_AUDIT.md",
+  "translations": {
+    "es": {
+      "title": "Recuperación de descomposiciones en triángulos con anfitrión tras borrados aleatorios en grafos split",
+      "manuscript": "01_manuscript/split-gap-iii-es.pdf",
+      "companion": "05_formalization/companion-es.pdf",
+      "ledger": "06_proof_ledger/ledger-es.pdf"
+    }
+  },
+  "supplement_public_url": "https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap/main/preprints/SPLITGAPIII/05_formalization/split-gap-iii-lean-v0.4.zip",
+  "distribution_public_url": "https://raw.githubusercontent.com/jtraverso/split-clique-partition-gap/main/archives/split-gap-iii-preprint-v1.0.zip"
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "file": "01_manuscript/split-gap-iii-en.pdf",
+    "pages": 17,
+    "rendered_and_reviewed": true,
+    "sha256_pdf": "02a4977dc7acbc3b7f709d2d078194f051042996ac8bd90d6e6260c642e3de0d",
+    "sha256_tex": "d68e2d2a05409006e398b142b3e63af80403987a3c6eec29e7c73aa84eb9de99",
+    "pdf_supplement_link_pages": [
+      14
+    ],
+    "supplement_sha256": "f5e51ff6a95f04688e92e5c291528ba14c689acda765282cde10c5a4c55cba46"
+  },
+  {
+    "file": "01_manuscript/split-gap-iii-es.pdf",
+    "pages": 18,
+    "rendered_and_reviewed": true,
+    "sha256_pdf": "72f3e5ad4281a63aafa658671e4fe0aeeddaca779178dc9b822abc2e8cae69b4",
+    "sha256_tex": "86f18475465db010660f2e0cdcc050d4fa49c01e8c6746a2dcf22f6ace89638a",
+    "pdf_supplement_link_pages": [
+      15
+    ],
+    "supplement_sha256": "f5e51ff6a95f04688e92e5c291528ba14c689acda765282cde10c5a4c55cba46"
+  },
+  {
+    "file": "05_formalization/companion-en.pdf",
+    "pages": 2,
+    "rendered_and_reviewed": true,
+    "sha256_pdf": "7d6e591640e31831a4223a49d93badd6cf564480e963b1a0368a1fcb99ed3f7d",
+    "sha256_tex": "935a80277c79893b2ea16b225c7d4400f46c3e3445d225395e8f7f8f83194d20"
+  },
+  {
+    "file": "05_formalization/companion-es.pdf",
+    "pages": 2,
+    "rendered_and_reviewed": true,
+    "sha256_pdf": "56051cc5cd155764da93f1e8c35a11007597a28dac9edb106006df3ffd358db6",
+    "sha256_tex": "92b695c21bf274b59be983dff2e20890bdc5573f63b0e720ed82b4736d231096"
+  },
+  {
+    "file": "06_proof_ledger/ledger-en.pdf",
+    "pages": 2,
+    "rendered_and_reviewed": true,
+    "sha256_pdf": "ca52fa3fbba2e1ff02972fd865bae295bac9d0c40662cf09d2dbe03ae8d9c286",
+    "sha256_tex": "44ef5dafbf4a876809b722681e95cdaf2417f9401131e5b139d506451502d783"
+  },
+  {
+    "file": "06_proof_ledger/ledger-es.pdf",
+    "pages": 2,
+    "rendered_and_reviewed": true,
+    "sha256_pdf": "cf0b8ea7e120412e2387bc8bd007a7537e715d7c1db39c8dc2dd3f5fe034620d",
+    "sha256_tex": "a2881a8f31d322198132d3d18eb8dd9cf212c6e78149e6e9ae448e91529e95a2"
+  }
+]

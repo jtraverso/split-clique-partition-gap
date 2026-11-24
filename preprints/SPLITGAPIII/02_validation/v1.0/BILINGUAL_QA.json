@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "paragraphs_aligned": 157,
+  "math_expressions_matched_by_paragraph": 734,
+  "localized_math_table_labels": "coordinate-order table",
+  "equation_references_matched": true,
+  "bracketed_citations_matched": true,
+  "theorem_hypotheses_and_proof_text_checked": true,
+  "languages": [
+    "en",
+    "es"
+  ]
+}

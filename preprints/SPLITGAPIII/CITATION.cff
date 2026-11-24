@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Please cite the preprint using its DOI."
+type: software
+title: "Recovering Host-Triangle Decompositions after Random Deletions in Split Graphs — preprint and supplementary materials"
+authors:
+  - family-names: Traverso Gianini
+    given-names: Juan Pablo
+    orcid: https://orcid.org/0009-0003-6068-4096
+version: "1.0"
+doi: 10.5281/zenodo.24494747
+repository-code: https://github.com/jtraverso/split-clique-partition-gap
+preferred-citation:
+  type: article
+  title: "Recovering Host-Triangle Decompositions after Random Deletions in Split Graphs"
+  authors:
+    - family-names: Traverso Gianini
+      given-names: Juan Pablo
+      orcid: https://orcid.org/0009-0003-6068-4096
+  year: 2026
+  doi: 10.5281/zenodo.24494747
+  url: https://github.com/jtraverso/split-clique-partition-gap/tree/main/preprints/SPLITGAPIII

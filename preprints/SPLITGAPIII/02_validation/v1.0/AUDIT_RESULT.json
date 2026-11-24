@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "scope": "Final bilingual preprint 1.0 staged for author review",
+  "references": "semantic-diff.json",
+  "pdfs": "PDF_QA.json",
+  "lean": {
+    "mode": "replayed audit driver against compiled dependencies",
+    "declarations": 77,
+    "archive_version": "0.4"
+  },
+  "public_release": "pending author decision",
+  "reserved_doi": "10.5281/zenodo.24494747",
+  "deposit_title_sync": "pending; final metadata in zenodo-metadata.json",
+  "languages": [
+    "en",
+    "es"
+  ],
+  "parity": "BILINGUAL_QA.json",
+  "publication": "awaiting author review and authorization",
+  "anonymous_download_verification": "at public deployment"
+}

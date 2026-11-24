@@ -1,0 +1,33 @@
+# Cuaderno de demostraciones de Recuperación de descomposiciones en triángulos con anfitrión tras borrados aleatorios en grafos split
+
+## De los triángulos asignados a la brecha
+
+Sea $J$ el conjunto de pares requeridos y $B$ el grafo residual sobre la clique. Al asignar una base se usan dos aristas cruzadas distintas. Una asignación propia usa cada arista cruzada a lo sumo una vez. Si la asignación es completa, los dos costes de partición en (7) tienen el término común $|E(G)|-2|J|$. Restar el coste fraccionario del entero da $F(B)-I(B)$. Al borrar aristas cruzadas se modifica el término común y se conserva la independencia en $B$ de las vecindades de los anfitriones. Una nueva asignación de todos los pares da por tanto la misma diferencia. Este es el paso de transferencia en el Teorema 3.
+
+## Recuperación de las cuatro hipótesis en un mismo soporte
+
+En cada lado de un bloque bipartito, el factor debe llevar $d^2$ unidades. En un corte cuyo lado de la fuente contiene a $X$ y a los anfitriones fuera de $Y$, la capacidad disponible es
+$$
+d(d-|X|)+e(X,Y)+\sum_{h\notin Y}a_h.
+$$
+Al usar $\sum_h a_h=d^2$ y comparar con $d^2$ se obtiene (11). Usar los mismos grados de anfitrión en ambos lados permite emparejar las incidencias seleccionadas en cada anfitrión. En el bloque clique, los grados del núcleo son $d-1$ y los grados de los anfitriones deben ser pares. El apéndice B controla todos los cortes antes de elegir los factores.
+
+Los pesos iniciales de triángulo saturan las aristas cruzadas seleccionadas. Los errores restantes están en las bases y tienen márgenes nulos. Las correcciones de rectángulos de la sección 5 conservan las cargas cruzadas. En el caso de la clique, el coeficiente de $D_{ij}$ en (12) resulta de sumar cuatro contribuciones
+$$
+2(d-2)(d-3)+4+2(d-3)+2(d-3)=2(d-1)(d-2).
+$$
+El reparto de cada corrección entre anfitriones comunes mantiene positivos los pesos corregidos. El argumento entero de la sección 5 proporciona H2. Los conteos de vecinos comunes tras el recorte dan H3 e incluyen los pares sin incidencia superviviente.
+
+Para la bisagra que comparte una arista cruzada, los triángulos raíz son $uhv$ y $uhw$. Las siete aristas auxiliares son $ku,kv,kw,kz,vz,wz,hz$. Al añadir $uv,hv$ se obtienen $kuv,hvz,kwz$. Al añadir, en cambio, $uw,hw$ se obtienen $kuw,hwz,kvz$. Las nueve aristas aparecen una vez en cada partición. Los vértices raíz pertenecen al soporte, y las aristas auxiliares son disjuntas de las de ambos triángulos raíz. Los papeles de $k$ y $z$ se recuperan a partir de los únicos vecinos auxiliares de $u$ y $h$. Así se cuentan bisagras distintas en H4.
+
+## Conteo a dos escalas
+
+En un ciclo de longitud cuatro, los dos emparejamientos alternados deben usar anfitriones distintos. Al distinguir un emparejamiento hay $r(r-1)$ elecciones, cada una con peso $r^{-4}$ en el objetivo inicial. El multiplicador por ciclo es $(r-1)/r^3$. Hay $\binom d2^2$ ciclos en $K_{d,d}$ y $3\binom d4$ en $K_d$. Cuando $r/d\to1/p$, las contribuciones divididas por $d^2$ tienden a $p^2/4$ y $p^2/8$, respectivamente.
+
+El núcleo original tiene 15 roles. Hay $\binom{15}{2}=105$ pares de roles distintos y 15 tipos de clique en un solo rol. Con $a=\lfloor j/2\rfloor$, los bloques tardíos y secundarios completos aportan a lo sumo $108t^2(3/4)^a=o(t^2)$ bases de los tipos restringidos. El coeficiente principal para las bases del núcleo original es
+$$
+105\frac{p^2}{4}+15\frac{p^2}{8}=\frac{225p^2}{8}.
+$$
+Cada Pasch contado tiene dos anfitriones. Por el Lema 7, sus cuatro triángulos pertenecen a un único bloque. En la clique terminal $w/n\to p^2/64$, así que su contribución dividida por $n^2$ tiende a $(p^2/8)(p^2/64)^2=p^6/32768$.
+
+Para cada exponente fijo $q$, los bloques tempranos tienen lado al menos $\sqrt t$, suficiente para que las $n^q$ funciones de prueba formen una familia polinómica en el orden de cada bloque. T+ devuelve una sola descomposición por bloque para toda la familia y el conteo de Pasch. Al restringir a las bases de cada bloque, la unión es propia. La suma de errores en los bloques originales da (3), y la suma en todos los bloques da (2) para esa misma unión. La sucesión de reservas se elige antes de fijar las funciones de prueba y el borrado. La descomposición final puede depender de ambos.

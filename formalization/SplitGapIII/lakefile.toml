@@ -1,0 +1,45 @@
+name = "split_gap_iii"
+version = "0.1.0"
+requiresModuleSystem = true
+defaultTargets = ["Challenge", "Solution"]
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "c55e6e786f49471c72fbddbec5415808896aec1e"
+
+[[lean_lib]]
+name = "GalvinLib"
+
+[[lean_lib]]
+name = "GalvinMultigraph"
+
+[[lean_lib]]
+name = "GapExtremal"
+
+[[lean_lib]]
+name = "GraphBase"
+
+[[lean_lib]]
+name = "Konig"
+
+[[lean_lib]]
+name = "LeanPool"
+
+[[lean_lib]]
+name = "PaperV"
+
+[[lean_lib]]
+name = "PaperVIVendor"
+
+[[lean_lib]]
+name = "QuadraticExteriorPalomar"
+
+[[lean_lib]]
+name = "SplitGapIII"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SplitGapIIIRegistry.failure_probability_after_crossing_deletions",
+    "SplitGapIIIRegistry.recover_bipartite_physical_lists"
+  ],
+  "definition_names": [
+    "GapExtremal.hostGraph",
+    "GapExtremal.gap",
+    "SplitGapIII.Assigned",
+    "SplitGapIII.surviving_hosts"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

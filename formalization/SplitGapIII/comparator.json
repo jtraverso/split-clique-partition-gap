@@ -2,12 +2,15 @@
   "challenge_module": "Challenge",
   "solution_module": "Solution",
   "theorem_names": [
-    "SplitGapIIIRegistry.failure_probability_after_crossing_deletions",
+    "SplitGapIIIRegistry.quantitative_recovery_at_logarithmic_supply",
     "SplitGapIIIRegistry.recover_bipartite_physical_lists"
   ],
   "definition_names": [
     "GapExtremal.hostGraph",
-    "GapExtremal.gap"
+    "GapExtremal.gap",
+    "GapExtremal.jPairs",
+    "SplitGapIIIRegistry.HasHostAssignment",
+    "SplitGapIIIRegistry.survivingNeighborhood"
   ],
   "permitted_axioms": [
     "propext",

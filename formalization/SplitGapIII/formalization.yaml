@@ -2,12 +2,12 @@ version: "v0.4"
 project:
   name: "Physical host recovery and gap preservation after random crossing-edge deletions"
   description: >-
-    In a split graph with a complete host assignment, suppose sufficient surviving
-    host lists imply a complete reassignment. Under independent crossing-edge deletions,
-    a sum of explicit binomial tail bounds controls the probability of changing the
-    integral–fractional clique-partition gap. For a bipartite block, a proper midpoint
-    labeling supplies the degree bound needed to recover an assignment from surviving
-    physical host lists.
+    At every sufficiently large order n, we construct a split graph with an
+    integral–fractional clique-partition gap of order at least (pn)^(3/2).
+    If p^2 n exceeds an explicit constant times log n, independent survival of
+    crossing edges with probability p leaves, with probability at least 1 - 2 n^(-8),
+    both a complete physical reassignment and the same gap. The accompanying
+    bipartite lemma explicitly chooses each host from its own surviving list.
   authors: ["Juan Pablo Traverso Gianini"]
   responsible_maintainers: ["Juan Pablo Traverso Gianini"]
   license: Apache-2.0
@@ -19,7 +19,7 @@ sources:
     authors: ["Juan Pablo Traverso Gianini"]
     id: "https://www.alphaxiv.org/abs/2611.host-triangle-decompositions-random-deletions"
     type: preprint
-    location: "Split Gap III, preprint 1.0, Sections 3–4 and 7 (bipartite recovery and finite probabilistic transfer)"
+    location: "Split Gap III, preprint 1.0, Sections 3–4 and 7 (bipartite recovery and fixed-probability background)"
     relationship: formalizes
     author_endorsement: participated
   - title: "Stability of the Clique Partition Gap in Split Graphs"
@@ -32,12 +32,16 @@ related_formalizations:
   - id: "https://github.com/jtraverso/split-clique-partition-gap/tree/a90196c3731998b8ffee9ae920a50db28aafd567/preprints/SPLITGAPIII"
     relationship: builds-on
     note: "The released formalization supplement contains the proofs in SplitGapIII.Reassignment and SplitGapIII.RecoveryProbability."
+  - id: "PALOMAR-2026-10-20-000004"
+    relationship: builds-on
+    note: "The symmetric Lovász local lemma produces a conflict-free choice in the independent physical lists."
 status:
   scope: >-
-    The two compared declarations cover bipartite list recovery and the finite probabilistic
-    transfer to the gap of the undeleted graph. The probability bound assumes a deterministic
-    recovery rule. The full random-support theorem, the optimal Kp > 1 threshold, the quantitative
-    lower bound and connectivity, and the statistical asymptotics are outside these declarations.
+    The main declaration gives quantitative exact-gap recovery for indexed witnesses
+    at a finite logarithmic supply threshold, including existence of the post-deletion
+    assignment. The second declaration certifies membership in the prescribed bipartite
+    lists. The fixed-p nearly quadratic bound, connectivity and statistical asymptotics
+    of preprint 1.0 are outside the compared declarations.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: []
@@ -46,22 +50,28 @@ automation:
     - method: agent
       models: ["ChatGPT/Codex (OpenAI)"]
       framework: Codex
-      tool_setup: "Prepared and checked the independent statement and proof interface for the two declarations using Lean 4."
+      tool_setup: "Explored and checked mathematical arguments, implemented the indexed recovery proof, and prepared the independent statement and proof interface in Lean 4."
       cost: {wall_time: "not tracked", spend_usd: "not tracked", hardware: "local machine"}
       prompting_notes: "The submission interface was prepared at the request of the author."
+    - method: agent
+      models: ["Claude (Anthropic)"]
+      tool_setup: "Claude helped explore and check mathematical arguments and prepare the manuscript. See the AI-use statement in the pinned preprint: https://github.com/jtraverso/split-clique-partition-gap/blob/c2233c1d01db5737df2c14f9198741270ad1d2b2/preprints/SPLITGAPIII/01_manuscript/split-gap-iii-en.md"
+      cost: {wall_time: "not tracked", spend_usd: "not tracked", hardware: "not tracked"}
   spend_usd: "not tracked"
 fidelity:
   divergences: >-
-    The first statement composes the freeze's probability_gap_deviation with gap_of_complete_recovery
-    to compare against the undeleted graph, rather than its residual optimum difference.
-    The second statement writes the proper-label condition explicitly. It assumes that the
-    lists contain hosts adjacent to both endpoints and that enough of those hosts survive.
+    The main statement is an extension of the fixed-probability results of preprint 1.0.
+    It uses a different indexed residual and proves a lower bound at a smaller survival
+    scale. Reassignment and gap equality hold on the same event.
+    The second statement writes the proper-label condition explicitly. It assumes the
+    lists contain hosts adjacent to both endpoints and verifies that each chosen host lies
+    in its own request's list.
 review:
   status: agent-reviewed
   reviewers: ["OpenAI Codex"]
-  notes: "Compared the statement interface with the published scope and original Lean declarations."
+  notes: "Compared the strengthened statements with the mathematical argument and their Lean proofs."
 alignment:
   namespace: SplitGapIIIRegistry
   statements:
-    - {source: "Sections 4 and 7, finite probabilistic recovery of the original gap", lean: SplitGapIIIRegistry.failure_probability_after_crossing_deletions, module: Challenge, status: proved}
+    - {source: "Extension to preprint 1.0: exact gap and physical reassignment at logarithmic supply", lean: SplitGapIIIRegistry.quantitative_recovery_at_logarithmic_supply, module: Challenge, status: proved}
     - {source: "Sections 3–4, recovery from bipartite host lists", lean: SplitGapIIIRegistry.recover_bipartite_physical_lists, module: Challenge, status: proved}

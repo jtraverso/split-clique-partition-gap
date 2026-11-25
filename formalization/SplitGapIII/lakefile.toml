@@ -39,6 +39,15 @@ name = "QuadraticExteriorPalomar"
 name = "SplitGapIII"
 
 [[lean_lib]]
+name = "LocalLemmaLib"
+
+[[lean_lib]]
+name = "R434"
+
+[[lean_lib]]
+name = "SplitGapIV"
+
+[[lean_lib]]
 name = "Challenge"
 
 [[lean_lib]]

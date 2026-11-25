@@ -1,6 +1,7 @@
 module
 
 public import SplitGapIII.RecoveryProbability
+public import SplitGapIV.QuantitativeRecovery
 
 @[expose] public section
 
@@ -60,8 +61,54 @@ theorem recover_bipartite_physical_lists
     (lists : J → Finset H)
     (physical : ∀ e h, h ∈ lists e → e.val ⊆ N h)
     (large : ∀ e, Fintype.card S ≤ (lists e).card) :
-    ∃ host : J → H, HasHostAssignment N J host := by
-  exact SplitGapIII.recover_physical_bipartite_group N J left right midpoint ends sides midpoint_proper
-    lists physical large
+    ∃ host : J → H, (∀ e, host e ∈ lists e) ∧ HasHostAssignment N J host := by
+  obtain ⟨host, hlist, hproper⟩ :=
+    SplitGapIII.recover_bipartite_from_midpoints left right midpoint midpoint_proper lists large
+  refine ⟨host, hlist, fun e => physical e _ (hlist e), ?_⟩
+  intro e f hh v he hf
+  by_contra hne
+  apply hproper e f hne _ hh
+  rw [ends e, mem_insert, mem_singleton] at he
+  rw [ends f, mem_insert, mem_singleton] at hf
+  rcases he with he | he <;> rcases hf with hf | hf
+  · exact Or.inl (he.symm.trans hf)
+  · exact (sides e f (he.symm.trans hf)).elim
+  · exact (sides f e (hf.symm.trans he)).elim
+  · exact Or.inr (he.symm.trans hf)
+
+
+/-- Vertex types for the split witness built from the two shared indices per core vertex. -/
+abbrev IndexedCore (s : ℕ) := (Fin 3 × Fin 5) × Fin s × Fin s
+
+abbrev IndexedHosts (s n : ℕ) := Fin (n - Fintype.card (IndexedCore s))
+
+/-- The neighborhood in the graph of surviving crossing incidences. -/
+noncomputable def survivingNeighborhood
+    (N : H → Finset V) (keep : H × V → Set Ω) (ω : Ω) (h : H) : Finset V := by
+  classical
+  exact (N h).filter fun v => ω ∈ keep (h,v)
+
+/-- An n-vertex witness with exact gap preservation and complete physical recovery
+at logarithmic two-incidence supply. The neighborhoods are fixed before deletion. -/
+theorem quantitative_recovery_at_logarithmic_supply
+    [MeasurableSpace Ω] (μ : Measure Ω) [IsProbabilityMeasure μ]
+    (n : ℕ) (hn : 2 ≤ n) (hlog : 120 ≤ Real.log n)
+    (p : ℝ≥0∞) (hp : p.toReal ≤ 1) (hsupply : 471859200 * Real.log n ≤ p.toReal^2 * (n : ℝ)) :
+    ∃ s : ℕ, ∃ B : SimpleGraph (IndexedCore s), ∃ inst : DecidableRel B.Adj,
+      let _ := inst
+      ∃ N : IndexedHosts s n → Finset (IndexedCore s),
+      Fintype.card (IndexedCore s ⊕ IndexedHosts s n) = n ∧
+      (∀ h, ∀ a ∈ N h, ∀ b ∈ N h, ¬ B.Adj a b) ∧
+      2/9 * (s : ℝ)^3 ≤ gap (hostGraph N) ∧
+      (4/81 : ℝ) * (p.toReal * (n : ℝ) / 56623104000)^3 ≤ (gap (hostGraph N))^2 ∧
+      ∀ keep : IndexedHosts s n × IndexedCore s → Set Ω,
+        (∀ r, MeasurableSet (keep r)) → iIndepSet keep μ → (∀ r, μ (keep r) = p) →
+        μ.real {ω | ¬ ((∃ host : jPairs B univ → IndexedHosts s n,
+          HasHostAssignment (survivingNeighborhood N keep ω) (jPairs B univ) host) ∧
+          gap (hostGraph (survivingNeighborhood N keep ω)) = gap (hostGraph N))} ≤
+          2 * Real.exp (-8 * Real.log n) := by
+  obtain ⟨s,N,hcard,hind,hgap,hscale,hrec⟩ :=
+    SplitGapIV.indexed_quantitative_physical_recovery μ n hn hlog p hp hsupply
+  exact ⟨s,SplitGapIV.indexedResidual (Fin s),inferInstance,N,hcard,hind,hgap,hscale,hrec⟩
 
 end SplitGapIIIRegistry
